@@ -1,12 +1,10 @@
-extends CharacterBody2D
-
+class_name Player extends CharacterBody2D
 
 const SPEED = 200.0
-const MOVEMENT_SMOOTHING = 20
+const MOVEMENT_SMOOTHING = 50
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.

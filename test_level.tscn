@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bupxlc6cqk7ba"]
+
+[ext_resource type="Script" path="res://level.gd" id="1_8qa7c"]
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("1_8qa7c")
+spawn_points = [NodePath("SpawnPoint")]
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+position = Vector2(239, 116)
