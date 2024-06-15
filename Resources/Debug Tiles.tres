@@ -1,0 +1,17 @@
+[gd_resource type="GradientTexture2D" script_class="ColorTilesetTiles" load_steps=3 format=3 uid="uid://b0muva42spmsh"]
+
+[ext_resource type="Script" path="res://Classes/color_tileset_tiles.gd" id="1_ewqut"]
+
+[sub_resource type="Gradient" id="Gradient_p4d30"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8)
+colors = PackedColorArray(0, 0.431373, 0, 1, 0.494118, 1, 0.568627, 1, 0.176471, 0, 0, 1, 0, 0.266667, 1, 1, 0.219608, 0.247059, 0.345098, 1)
+
+[resource]
+gradient = SubResource("Gradient_p4d30")
+width = 80
+height = 16
+script = ExtResource("1_ewqut")
+tile_size = Vector2i(16, 16)
+tile_colors = Array[Color]([Color(0, 0.431373, 0, 1), Color(0.494118, 1, 0.568627, 1), Color(0.176471, 0, 0, 1), Color(0, 0.266667, 1, 1), Color(0.219608, 0.247059, 0.345098, 1)])
+editor_update = false
