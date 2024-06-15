@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfwnx2mosxenx"]
+
+[ext_resource type="FontFile" uid="uid://c7kk5rjhsmsbo" path="res://Assets/Magero.ttf" id="1_1vama"]
+[ext_resource type="Script" path="res://Dialogue.gd" id="1_k60uu"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_20c6j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mg0g1"]
+font = ExtResource("1_1vama")
+font_size = 12
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource("1_k60uu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_top = 244.0
+offset_right = 214.0
+offset_bottom = 270.0
+texture = SubResource("PlaceholderTexture2D_20c6j")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+text = "test test test test test test test test"
+label_settings = SubResource("LabelSettings_mg0g1")
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
