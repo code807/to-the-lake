@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody2D
 
+signal dialogue_trigger
+
 const SPEED = 75.0
 const MOVEMENT_SMOOTHING = 10
 const STOP_SMOOTHING = 50
@@ -56,6 +58,8 @@ func _on_area_2d_area_entered(area):
 	if area is Interactable:
 		interactables.append(area)
 		print(interactables.size())
+	elif area is DialogueTrigger:
+		dialogue_trigger.emit(area.dialogue)
 
 
 func _on_area_2d_area_exited(area):
