@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bupxlc6cqk7ba"]
+[gd_scene load_steps=8 format=3 uid="uid://bupxlc6cqk7ba"]
 
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_bqg6t"]
 [ext_resource type="TileSet" uid="uid://c8q88b71hsd1h" path="res://Resources/Debug Tileset.tres" id="2_iqpal"]
 [ext_resource type="Texture2D" uid="uid://8r5d2l2h7ni6" path="res://Assets/wanderer sprite.png" id="3_h5uu8"]
 [ext_resource type="Script" path="res://AnimatedSprite2D.gd" id="4_5gui3"]
+[ext_resource type="PackedScene" uid="uid://dcfp70xje5c4m" path="res://test_interactable.tscn" id="5_k11lv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xecf2"]
 atlas = ExtResource("3_h5uu8")
@@ -35,3 +36,15 @@ position = Vector2(239, 116)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SpawnPoint"]
 sprite_frames = SubResource("SpriteFrames_gs2kt")
 script = ExtResource("4_5gui3")
+
+[node name="TestInteractable" parent="." instance=ExtResource("5_k11lv")]
+position = Vector2(83, 211)
+
+[node name="TestInteractable2" parent="." instance=ExtResource("5_k11lv")]
+position = Vector2(78, 226)
+
+[node name="TestInteractable3" parent="." instance=ExtResource("5_k11lv")]
+position = Vector2(98, 220)
+
+[node name="TestInteractable4" parent="." instance=ExtResource("5_k11lv")]
+position = Vector2(96, 229)

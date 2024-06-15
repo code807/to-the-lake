@@ -1,10 +1,11 @@
-[gd_scene load_steps=29 format=3 uid="uid://cw6m8by2uvbo6"]
+[gd_scene load_steps=30 format=3 uid="uid://cw6m8by2uvbo6"]
 
 [ext_resource type="Script" path="res://CharacterController.gd" id="1_yfsd0"]
 [ext_resource type="Texture2D" uid="uid://8r5d2l2h7ni6" path="res://Assets/wanderer sprite.png" id="2_sjbbh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ql1s"]
-size = Vector2(16, 24)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6fjtv"]
+radius = 5.0
+height = 18.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hpwm"]
 atlas = ExtResource("2_sjbbh")
@@ -197,14 +198,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yb2go"]
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_yfsd0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_3ql1s")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6fjtv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_i21fx")
 animation = &"walk_down"
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_yb2go")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_checkanim"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

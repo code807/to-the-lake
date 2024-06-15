@@ -4,12 +4,27 @@ const SPEED = 75.0
 const MOVEMENT_SMOOTHING = 10
 const STOP_SMOOTHING = 50
 @onready var sprite = $AnimatedSprite2D
+var interactables: Array[Interactable] = []
+var closest = null
 
 var animindex = 1
 var animlist = ["walk_up", "walk_left", "walk_right", "walk_down"]
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func _process(delta):
+	if interactables.size() > 0:
+		var closest_distance: float = INF
+		for item in interactables:
+			var item_distance = global_position.distance_to(item.global_position)
+			if item_distance < closest_distance:
+				if closest != null:
+					closest.highlight = false
+				closest = item
+				closest_distance = item_distance
+				closest.highlight = true
+
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -34,3 +49,18 @@ func _checkanim():
 	if sprite.frame%3 == 0 and velocity.length() <= 5:
 		sprite.frame = 0
 		sprite.stop()
+
+
+func _on_area_2d_area_entered(area):
+	print("area entered")
+	if area is Interactable:
+		interactables.append(area)
+		print(interactables.size())
+
+
+func _on_area_2d_area_exited(area):
+	print("area exited")
+	if area is Interactable:
+		interactables.erase(area)
+		area.highlight = false
+		print(interactables.size())
