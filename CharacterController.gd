@@ -21,7 +21,6 @@ func _physics_process(delta):
 		var strongaxis = direction.max_axis_index()
 		var mindex = strongaxis+2 if sign(direction[strongaxis]) > 0 else strongaxis
 		if mindex != animindex:
-			print(mindex)
 			animindex = mindex
 			sprite.animation = animlist[animindex]
 			sprite.play()
@@ -32,7 +31,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _checkanim():
-	print("play")
 	if sprite.frame%3 == 0 and velocity.length() <= 5:
 		sprite.frame = 0
 		sprite.stop()
