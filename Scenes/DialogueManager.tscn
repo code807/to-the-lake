@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://7h3uqye2i4l7"]
+
+[ext_resource type="Script" path="res://dialogue_manager.gd" id="1_to5vr"]
+[ext_resource type="PackedScene" uid="uid://cyr0sw47xyunp" path="res://Scenes/Dialog Box.tscn" id="2_tqe01"]
+
+[node name="DialogueManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_to5vr")
+
+[node name="Chris" parent="." instance=ExtResource("2_tqe01")]
+layout_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="play_next_dialogue"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
