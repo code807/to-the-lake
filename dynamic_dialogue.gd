@@ -1,19 +1,23 @@
-class_name Dialogue extends CanvasLayer
+class_name DialogueBox extends Control
 
-@onready var label = $TextureRect/MarginContainer/Label
+@onready var label = $RichTextLabel
 @onready var timer = $Timer
 
 var dialogue_queue: Array[Dictionary] = []
 
+func _ready():
+	label.visible = false
+
+
 func play_dialogue(dialogue: String):
 	print("playing dialogue" + dialogue)
 	label.text = dialogue
-	$TextureRect.visible = true
+	label.visible = true
 	timer.start(5)
 
 
 func _on_timer_timeout():
-	$TextureRect.visible = false
+	label.visible = false
 
 
 func _on_dialogue_trigger(dialogues: Array[Dictionary]):
@@ -23,3 +27,4 @@ func _on_dialogue_trigger(dialogues: Array[Dictionary]):
 		#dialogues.erase(0)
 	#if dialogues.size() > 0:
 		#pass
+

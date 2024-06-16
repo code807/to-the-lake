@@ -2,7 +2,7 @@ class_name Main extends Control
 
 var player: Player
 var player_scene = preload("res://Player.tscn")
-@onready var dialogue: Dialogue = $Dialogue
+@onready var dialogue: DialogueBox = $HUD/DialogueBox
 var spawn: Vector2
 const levels := {
 	"test_level": preload("res://test_level.tscn")

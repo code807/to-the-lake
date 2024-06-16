@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-signal dialogue_trigger
+signal dialogue_trigger(Array)
 
 const SPEED = 75.0
 const MOVEMENT_SMOOTHING = 10

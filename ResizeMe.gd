@@ -8,11 +8,11 @@ func _ready():
 	
 		# Do something
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if randf() > 0.8:
-		moreorless = !moreorless
-	text = text+"a" if moreorless else text.erase(0, 1)
-	pass
+#func _process(delta):
+	#if randf() > 0.8:
+		#moreorless = !moreorless
+	#text = text+"a" if moreorless else text.erase(0, 1)
+	#pass
 
 
 func _on_finished():

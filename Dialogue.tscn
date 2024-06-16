@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfwnx2mosxenx"]
+[gd_scene load_steps=6 format=3 uid="uid://cfwnx2mosxenx"]
 
 [ext_resource type="FontFile" uid="uid://c7kk5rjhsmsbo" path="res://Assets/Magero.ttf" id="1_1vama"]
 [ext_resource type="Script" path="res://Dialogue.gd" id="1_k60uu"]
+[ext_resource type="PackedScene" uid="uid://cyr0sw47xyunp" path="res://Dialog Box.tscn" id="3_vn88q"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_20c6j"]
 
@@ -14,9 +15,9 @@ script = ExtResource("1_k60uu")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
-offset_top = 244.0
+offset_top = 213.0
 offset_right = 214.0
-offset_bottom = 270.0
+offset_bottom = 239.0
 texture = SubResource("PlaceholderTexture2D_20c6j")
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
@@ -39,5 +40,15 @@ label_settings = SubResource("LabelSettings_mg0g1")
 autowrap_mode = 2
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Charlie" type="Node2D" parent="."]
+
+[node name="Taylor" type="Node2D" parent="."]
+
+[node name="Jeff" type="Node2D" parent="."]
+
+[node name="Chris" type="Node2D" parent="."]
+
+[node name="Control" parent="." instance=ExtResource("3_vn88q")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
