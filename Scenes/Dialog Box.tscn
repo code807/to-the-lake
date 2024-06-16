@@ -56,6 +56,7 @@ patch_margin_right = 6
 patch_margin_bottom = 12
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="finished" from="RichTextLabel" to="RichTextLabel" method="_on_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

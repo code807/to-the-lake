@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bupxlc6cqk7ba"]
+[gd_scene load_steps=12 format=3 uid="uid://bupxlc6cqk7ba"]
 
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_bqg6t"]
 [ext_resource type="TileSet" uid="uid://c8q88b71hsd1h" path="res://Resources/Debug Tileset.tres" id="2_iqpal"]
 [ext_resource type="Texture2D" uid="uid://8r5d2l2h7ni6" path="res://Assets/wanderer sprite.png" id="3_h5uu8"]
 [ext_resource type="Script" path="res://AnimatedSprite2D.gd" id="4_5gui3"]
-[ext_resource type="PackedScene" uid="uid://dcfp70xje5c4m" path="res://test_interactable.tscn" id="5_k11lv"]
-[ext_resource type="PackedScene" uid="uid://uv3xjcj7iouv" path="res://dialogue_trigger.tscn" id="6_nt2h6"]
+[ext_resource type="PackedScene" uid="uid://dcfp70xje5c4m" path="res://Scenes/test_interactable.tscn" id="5_v7ioy"]
+[ext_resource type="PackedScene" uid="uid://uv3xjcj7iouv" path="res://Scenes/dialogue_trigger.tscn" id="6_ik5kk"]
+[ext_resource type="Script" path="res://dialogue_resource.gd" id="7_j1lko"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xecf2"]
 atlas = ExtResource("3_h5uu8")
@@ -21,6 +22,20 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Resource" id="Resource_kwkon"]
+script = ExtResource("7_j1lko")
+story_teller = 3
+dialogue = "Did you hear about the spikey snake?"
+speech_time = 4.0
+wait_time = 5.0
+
+[sub_resource type="Resource" id="Resource_3k8v1"]
+script = ExtResource("7_j1lko")
+story_teller = 3
+dialogue = "I hear he's really entertaining and cool!"
+speech_time = 4.0
+wait_time = 5.0
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("1_bqg6t")
@@ -38,16 +53,21 @@ position = Vector2(239, 116)
 sprite_frames = SubResource("SpriteFrames_gs2kt")
 script = ExtResource("4_5gui3")
 
-[node name="TestInteractable" parent="." instance=ExtResource("5_k11lv")]
+[node name="TestInteractable" parent="." instance=ExtResource("5_v7ioy")]
 position = Vector2(83, 211)
 
-[node name="TestInteractable2" parent="." instance=ExtResource("5_k11lv")]
+[node name="TestInteractable2" parent="." instance=ExtResource("5_v7ioy")]
 position = Vector2(78, 226)
 
-[node name="TestInteractable3" parent="." instance=ExtResource("5_k11lv")]
+[node name="TestInteractable3" parent="." instance=ExtResource("5_v7ioy")]
 position = Vector2(98, 220)
 
-[node name="TestInteractable4" parent="." instance=ExtResource("5_k11lv")]
+[node name="TestInteractable4" parent="." instance=ExtResource("5_v7ioy")]
 position = Vector2(96, 229)
 
-[node name="DialogueTrigger" parent="." instance=ExtResource("6_nt2h6")]
+[node name="DialogueTrigger" parent="." instance=ExtResource("6_ik5kk")]
+dialogue = Array[ExtResource("7_j1lko")]([SubResource("Resource_kwkon")])
+
+[node name="DialogueTrigger2" parent="." instance=ExtResource("6_ik5kk")]
+position = Vector2(87, 255)
+dialogue = Array[ExtResource("7_j1lko")]([SubResource("Resource_3k8v1")])

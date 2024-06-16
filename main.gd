@@ -2,7 +2,7 @@ class_name Main extends Control
 
 var player: Player
 var player_scene = preload("res://Player.tscn")
-@onready var dialogue: DialogueBox = $HUD/DialogueBox
+@onready var dialogue_manager: DialogueManager = $HUD/DialogueManager
 var spawn: Vector2
 const levels := {
 	"test_level": preload("res://test_level.tscn")
@@ -33,4 +33,4 @@ func _spawn_player():
 		player = player_scene.instantiate()
 		add_child(player)
 		player.position = spawn
-		player.dialogue_trigger.connect(dialogue._on_dialogue_trigger)
+		player.dialogue_trigger.connect(dialogue_manager._on_dialogue_trigger)

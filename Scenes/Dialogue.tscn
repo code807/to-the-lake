@@ -1,17 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://cfwnx2mosxenx"]
 
-[ext_resource type="FontFile" uid="uid://c7kk5rjhsmsbo" path="res://Assets/Magero.ttf" id="1_1vama"]
-[ext_resource type="Script" path="res://Dialogue.gd" id="1_k60uu"]
-[ext_resource type="PackedScene" uid="uid://cyr0sw47xyunp" path="res://Dialog Box.tscn" id="3_vn88q"]
+[ext_resource type="Script" path="res://Dialogue.gd" id="1_0w767"]
+[ext_resource type="FontFile" uid="uid://c7kk5rjhsmsbo" path="res://Assets/Magero.ttf" id="2_sjbm3"]
+[ext_resource type="PackedScene" uid="uid://cyr0sw47xyunp" path="res://Scenes/Dialog Box.tscn" id="3_6novt"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_20c6j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mg0g1"]
-font = ExtResource("1_1vama")
+font = ExtResource("2_sjbm3")
 font_size = 12
 
 [node name="Control" type="CanvasLayer"]
-script = ExtResource("1_k60uu")
+script = ExtResource("1_0w767")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
@@ -49,6 +49,6 @@ autowrap_mode = 2
 
 [node name="Chris" type="Node2D" parent="."]
 
-[node name="Control" parent="." instance=ExtResource("3_vn88q")]
+[node name="Control" parent="." instance=ExtResource("3_6novt")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -3,28 +3,17 @@ class_name DialogueBox extends Control
 @onready var label = $RichTextLabel
 @onready var timer = $Timer
 
-var dialogue_queue: Array[Dictionary] = []
-
 func _ready():
 	label.visible = false
 
 
-func play_dialogue(dialogue: String):
-	print("playing dialogue" + dialogue)
+func play_dialogue(dialogue: String, speech_time: float):
+	print("Dialog box is playing " + dialogue + " for time " + str(speech_time))
 	label.text = dialogue
 	label.visible = true
-	timer.start(5)
+	timer.start(speech_time)
 
 
 func _on_timer_timeout():
+	print("Dialogue stopped!")
 	label.visible = false
-
-
-func _on_dialogue_trigger(dialogues: Array[Dictionary]):
-	print("playing dialogues" + str(dialogues))
-	#if dialogues.size() > 0:
-	play_dialogue(dialogues[0][StoryTellers.names.CHRIS])
-		#dialogues.erase(0)
-	#if dialogues.size() > 0:
-		#pass
-

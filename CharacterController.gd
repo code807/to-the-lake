@@ -54,12 +54,12 @@ func _checkanim():
 
 
 func _on_area_2d_area_entered(area):
-	print("area entered")
+	print("area entered" + type_string(typeof(area)))
 	if area is Interactable:
-		interactables.append(area)
-		print(interactables.size())
+			interactables.append(area)
+			print(interactables.size())
 	elif area is DialogueTrigger:
-		dialogue_trigger.emit(area.dialogue)
+			dialogue_trigger.emit(area.dialogue)
 
 
 func _on_area_2d_area_exited(area):
