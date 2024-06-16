@@ -28,14 +28,16 @@ script = ExtResource("7_j1lko")
 story_teller = 3
 dialogue = "Did you hear about the spikey snake?"
 speech_time = 4.0
-wait_time = 5.0
+wait_time = 6.0
+pause_time = 1.0
 
 [sub_resource type="Resource" id="Resource_3k8v1"]
 script = ExtResource("7_j1lko")
 story_teller = 3
 dialogue = "I hear he's really entertaining and cool!"
-speech_time = 4.0
-wait_time = 5.0
+speech_time = 2.0
+wait_time = 6.0
+pause_time = 1.0
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("1_bqg6t")

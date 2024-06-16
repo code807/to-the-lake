@@ -25,4 +25,4 @@ func play_next_dialogue():
 func play_dialogue(dialogue: DialogResource):
 	print("playing dialogue" + dialogue.dialogue)
 	var dialogue_box: DialogueBox = dialogue_box_dict[dialogue.story_teller]
-	dialogue_box.play_dialogue(dialogue.dialogue, dialogue.speech_time)
+	dialogue_box.play_dialogue(dialogue.dialogue, dialogue.speech_time, dialogue.pause_time)

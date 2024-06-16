@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyr0sw47xyunp"]
 
-[ext_resource type="Script" path="res://dynamic_dialogue.gd" id="1_6ikvb"]
+[ext_resource type="Script" path="res://dialogue_box.gd" id="1_6ikvb"]
 [ext_resource type="Texture2D" uid="uid://bp6c0h80wd30k" path="res://Assets/dialogueninepatch.png" id="1_euc8w"]
 [ext_resource type="FontFile" uid="uid://bmo4kus8ha582" path="res://Assets/m6x11.ttf" id="2_lxilw"]
 [ext_resource type="Script" path="res://ResizeMe.gd" id="3_5737m"]
@@ -58,5 +58,8 @@ patch_margin_bottom = 12
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="LetterTimer" type="Timer" parent="."]
+
 [connection signal="finished" from="RichTextLabel" to="RichTextLabel" method="_on_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="LetterTimer" to="." method="_newletter"]
