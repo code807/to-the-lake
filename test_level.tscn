@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bupxlc6cqk7ba"]
+[gd_scene load_steps=18 format=3 uid="uid://bupxlc6cqk7ba"]
 
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_bqg6t"]
 [ext_resource type="TileSet" uid="uid://c8q88b71hsd1h" path="res://Resources/Debug Tileset.tres" id="2_iqpal"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dcfp70xje5c4m" path="res://Scenes/test_interactable.tscn" id="5_v7ioy"]
 [ext_resource type="PackedScene" uid="uid://uv3xjcj7iouv" path="res://Scenes/dialogue_trigger.tscn" id="6_ik5kk"]
 [ext_resource type="Script" path="res://dialogue_resource.gd" id="7_j1lko"]
+[ext_resource type="Script" path="res://Classes/warp_point.gd" id="8_ldsn7"]
+[ext_resource type="Script" path="res://Scenes/TriangleLightup.gd" id="9_c0587"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xecf2"]
 atlas = ExtResource("3_h5uu8")
@@ -63,9 +65,11 @@ speech_time = 2.0
 wait_time = 6.0
 pause_time = 1.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yixcf"]
+
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("1_bqg6t")
-spawn_points = [NodePath("SpawnPoint")]
+spawn_points = [NodePath("SpawnPoint"), NodePath("WarpPoint/Spawn 1")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_iqpal")
@@ -97,3 +101,22 @@ dialogue = Array[ExtResource("7_j1lko")]([SubResource("Resource_kwkon"), SubReso
 [node name="DialogueTrigger2" parent="." instance=ExtResource("6_ik5kk")]
 position = Vector2(55, 279)
 dialogue = Array[ExtResource("7_j1lko")]([SubResource("Resource_3k8v1")])
+
+[node name="WarpPoint" type="Area2D" parent="."]
+position = Vector2(344, 115)
+script = ExtResource("8_ldsn7")
+destination = "test_level_1"
+warpindex = 1
+
+[node name="Polygon2D2" type="Polygon2D" parent="WarpPoint"]
+position = Vector2(-1, -1)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-13, 11, 0, -16, 15, 11)
+script = ExtResource("9_c0587")
+
+[node name="Spawn 1" type="Node2D" parent="WarpPoint"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarpPoint"]
+shape = SubResource("CircleShape2D_yixcf")
+
+[connection signal="_highlight" from="WarpPoint" to="WarpPoint/Polygon2D2" method="onoff"]

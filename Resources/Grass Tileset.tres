@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bu1pmm8hkbq5q"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bu1pmm8hkbq5q"]
 
 [ext_resource type="Texture2D" uid="uid://d0dxjja424eq0" path="res://Assets/grass tiles.png" id="1_ova2y"]
+[ext_resource type="Texture2D" uid="uid://bui4dpwcepag7" path="res://Assets/single ground.png" id="2_6tfv8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e6bnw"]
 texture = ExtResource("1_ova2y")
@@ -358,8 +359,13 @@ texture = ExtResource("1_ova2y")
 6:6/0/terrains_peering_bit/top_side = 0
 6:6/0/terrains_peering_bit/top_right_corner = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dsuhb"]
+texture = ExtResource("2_6tfv8")
+0:0/0 = 0
+
 [resource]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.501961, 1, 0.25098, 1)
 sources/0 = SubResource("TileSetAtlasSource_e6bnw")
+sources/1 = SubResource("TileSetAtlasSource_dsuhb")

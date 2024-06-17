@@ -46,6 +46,3 @@ func _on_finished():
 		StoryTellers.names.CHRIS:
 			label.set_position(Vector2(6, size.y-label.size.y-12))
 	
-
-	print("something somewhere was set")
-	

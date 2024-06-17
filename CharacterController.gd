@@ -1,6 +1,7 @@
 class_name Player extends CharacterBody2D
 
 signal dialogue_trigger(Array)
+signal warp_trigger(String, int)
 
 const SPEED = 75.0
 const MOVEMENT_SMOOTHING = 10
@@ -16,6 +17,9 @@ var animlist = ["walk_up", "walk_left", "walk_right", "walk_down"]
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _process(delta):
+	if Input.is_action_just_pressed("interact"):
+		if closest is WarpPoint:
+			emit_signal("warp_trigger", closest.destination, closest.warpindex)
 	if interactables.size() > 0:
 		var closest_distance: float = INF
 		for item in interactables:
@@ -54,17 +58,13 @@ func _checkanim():
 
 
 func _on_area_2d_area_entered(area):
-	print("area entered" + type_string(typeof(area)))
 	if area is Interactable:
 			interactables.append(area)
-			print(interactables.size())
 	elif area is DialogueTrigger:
 			dialogue_trigger.emit(area.dialogue)
 
 
 func _on_area_2d_area_exited(area):
-	print("area exited")
 	if area is Interactable:
 		interactables.erase(area)
 		area.highlight = false
-		print(interactables.size())
