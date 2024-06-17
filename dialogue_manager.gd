@@ -3,6 +3,9 @@ class_name DialogueManager extends Control
 @onready var timer = $Timer
 
 @onready var dialogue_box_dict = {
+	StoryTellers.names.CHARLIE: $Charlie,
+	StoryTellers.names.TAYLOR: $Taylor,
+	StoryTellers.names.JEFF: $Jeff,
 	StoryTellers.names.CHRIS: $Chris
 }
 var dialogue_queue = []

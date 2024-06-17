@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bupxlc6cqk7ba"]
+[gd_scene load_steps=15 format=3 uid="uid://bupxlc6cqk7ba"]
 
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_bqg6t"]
 [ext_resource type="TileSet" uid="uid://c8q88b71hsd1h" path="res://Resources/Debug Tileset.tres" id="2_iqpal"]
@@ -25,15 +25,39 @@ animations = [{
 
 [sub_resource type="Resource" id="Resource_kwkon"]
 script = ExtResource("7_j1lko")
-story_teller = 3
+story_teller = 0
 dialogue = "Did you hear about the spikey snake?"
-speech_time = 4.0
+speech_time = 3.0
+wait_time = 6.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_73d8g"]
+script = ExtResource("7_j1lko")
+story_teller = 1
+dialogue = "I hear he's really entertaining!"
+speech_time = 3.0
+wait_time = 6.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_r1w0o"]
+script = ExtResource("7_j1lko")
+story_teller = 2
+dialogue = "Ya, Quellus says he's a really cool guy"
+speech_time = 3.0
+wait_time = 6.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_xpo6e"]
+script = ExtResource("7_j1lko")
+story_teller = 3
+dialogue = "I heard that too!"
+speech_time = 1.0
 wait_time = 6.0
 pause_time = 1.0
 
 [sub_resource type="Resource" id="Resource_3k8v1"]
 script = ExtResource("7_j1lko")
-story_teller = 3
+story_teller = 0
 dialogue = "I hear he's really entertaining and cool!"
 speech_time = 2.0
 wait_time = 6.0
@@ -68,8 +92,8 @@ position = Vector2(98, 220)
 position = Vector2(96, 229)
 
 [node name="DialogueTrigger" parent="." instance=ExtResource("6_ik5kk")]
-dialogue = Array[ExtResource("7_j1lko")]([SubResource("Resource_kwkon")])
+dialogue = Array[ExtResource("7_j1lko")]([SubResource("Resource_kwkon"), SubResource("Resource_73d8g"), SubResource("Resource_r1w0o"), SubResource("Resource_xpo6e")])
 
 [node name="DialogueTrigger2" parent="." instance=ExtResource("6_ik5kk")]
-position = Vector2(87, 255)
+position = Vector2(55, 279)
 dialogue = Array[ExtResource("7_j1lko")]([SubResource("Resource_3k8v1")])

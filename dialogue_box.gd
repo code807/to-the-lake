@@ -1,13 +1,17 @@
 class_name DialogueBox extends Control
 
+@export var storyteller: StoryTellers.names
+
 @onready var label = $RichTextLabel
 @onready var timer = $Timer
 @onready var lettertimer = $LetterTimer
+
 var lettertime = 0
 var string: String = ""
 
 func _ready():
 	label.visible = false
+	_on_finished()
 
 
 func play_dialogue(dialogue: String, speech_time: float, pause_time: float):
@@ -28,3 +32,20 @@ func _newletter():
 func _on_timer_timeout():
 	print("Dialogue stopped!")
 	label.visible = false
+
+
+func _on_finished():
+	label.size.y = label.get_content_height()
+	match(storyteller):
+		StoryTellers.names.CHARLIE:
+			label.set_position(Vector2(6,6))
+		StoryTellers.names.TAYLOR:
+			label.set_position(Vector2(size.x-label.size.x-6,6))
+		StoryTellers.names.JEFF:
+			label.set_position(Vector2(size.x-label.size.x-6, size.y-label.size.y-12))
+		StoryTellers.names.CHRIS:
+			label.set_position(Vector2(6, size.y-label.size.y-12))
+	
+
+	print("something somewhere was set")
+	

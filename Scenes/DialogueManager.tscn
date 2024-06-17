@@ -8,8 +8,20 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_to5vr")
 
+[node name="Charlie" parent="." instance=ExtResource("2_tqe01")]
+layout_mode = 1
+
+[node name="Taylor" parent="." instance=ExtResource("2_tqe01")]
+layout_mode = 1
+storyteller = 1
+
+[node name="Jeff" parent="." instance=ExtResource("2_tqe01")]
+layout_mode = 1
+storyteller = 2
+
 [node name="Chris" parent="." instance=ExtResource("2_tqe01")]
 layout_mode = 1
+storyteller = 3
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
