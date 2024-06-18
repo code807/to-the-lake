@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7wp4m3c4aeab"]
+[gd_scene load_steps=6 format=3 uid="uid://12pi4qcpx0c4"]
 
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_628or"]
 [ext_resource type="TileSet" uid="uid://bu1pmm8hkbq5q" path="res://Resources/Grass Tileset.tres" id="2_c10c7"]
@@ -29,8 +29,7 @@ layer_1/tile_data = PackedInt32Array(1507353, 393216, 0, 1507352, 65536, 2, 1507
 [node name="WarpPoint" type="Area2D" parent="."]
 position = Vector2(83, 191)
 script = ExtResource("3_mr8jg")
-destination = "test_level"
-warpindex = 1
+destination = "test_puzzle_1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WarpPoint"]
 shape = SubResource("CircleShape2D_ynw85")

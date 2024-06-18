@@ -106,7 +106,6 @@ dialogue = Array[ExtResource("7_j1lko")]([SubResource("Resource_3k8v1")])
 position = Vector2(344, 115)
 script = ExtResource("8_ldsn7")
 destination = "test_level_1"
-warpindex = 1
 
 [node name="Polygon2D2" type="Polygon2D" parent="WarpPoint"]
 position = Vector2(-1, -1)

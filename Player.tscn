@@ -201,6 +201,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_yb2go"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+y_sort_enabled = true
+motion_mode = 1
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_block_on_wall = false
+floor_max_angle = 0.0
+floor_snap_length = 0.0
+platform_on_leave = 2
 script = ExtResource("1_yfsd0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -208,9 +216,9 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_6fjtv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_i21fx")
 animation = &"walk_down"
+offset = Vector2(0, -9.225)
 
 [node name="Area2D" type="Area2D" parent="."]
 

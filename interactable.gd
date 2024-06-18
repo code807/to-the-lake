@@ -2,6 +2,7 @@ class_name Interactable extends Area2D
 
 var highlight := false : set = set_highlight
 signal _highlight(bool)
+signal interacted(Node2D)
 
 func set_highlight(new_highlight: bool):
 	highlight = new_highlight
@@ -11,3 +12,7 @@ func set_highlight(new_highlight: bool):
 
 func _on_highlight(value: bool):
 	pass
+
+
+func interact(interacter: Node2D):
+	interacted.emit(interacter)

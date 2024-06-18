@@ -18,8 +18,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):
-		if closest is WarpPoint:
-			emit_signal("warp_trigger", closest.destination, closest.warpindex)
+		if closest != null:
+			if closest is WarpPoint:
+				emit_signal("warp_trigger", closest.destination, closest.warpindex)
+			closest.interacted.emit(self)
 	if interactables.size() > 0:
 		var closest_distance: float = INF
 		for item in interactables:
@@ -51,6 +53,7 @@ func _physics_process(delta):
 		velocity =  velocity.move_toward(Vector2(0,0), STOP_SMOOTHING)
 	move_and_slide()
 
+
 func _checkanim():
 	if sprite.frame%3 == 0 and velocity.length() <= 5:
 		sprite.frame = 0
@@ -68,3 +71,5 @@ func _on_area_2d_area_exited(area):
 	if area is Interactable:
 		interactables.erase(area)
 		area.highlight = false
+		if interactables.size() == 0:
+			closest = null
