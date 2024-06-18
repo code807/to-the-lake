@@ -6,7 +6,8 @@ var player_scene = preload("res://Player.tscn")
 var spawn: Vector2
 const levels := {
 	"test_level": preload("res://test_level.tscn"),
-	"test_level_1": preload("res://Scenes/test_level_1.tscn")
+	"test_level_1": preload("res://Scenes/test_level_1.tscn"),
+	"test_puzzle_1": preload("res://Scenes/test_puzzle_1.tscn")
 }
 var level:Level
 
