@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bupxlc6cqk7ba"]
+[gd_scene load_steps=19 format=3 uid="uid://bupxlc6cqk7ba"]
 
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_bqg6t"]
 [ext_resource type="TileSet" uid="uid://c8q88b71hsd1h" path="res://Resources/Debug Tileset.tres" id="2_iqpal"]
@@ -67,6 +67,8 @@ pause_time = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yixcf"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pdgo3"]
+
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("1_bqg6t")
 spawn_points = [NodePath("SpawnPoint"), NodePath("WarpPoint/Spawn 1")]
@@ -118,4 +120,31 @@ script = ExtResource("9_c0587")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WarpPoint"]
 shape = SubResource("CircleShape2D_yixcf")
 
+[node name="WarpPoint3" type="Area2D" parent="."]
+position = Vector2(215, 87)
+script = ExtResource("8_ldsn7")
+destination = "hub"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarpPoint3"]
+shape = SubResource("CircleShape2D_pdgo3")
+
+[node name="Polygon2D2" type="Polygon2D" parent="WarpPoint3"]
+position = Vector2(-1, -1)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-13, 11, 0, -16, 15, 11)
+script = ExtResource("9_c0587")
+
+[node name="Label" type="Label" parent="WarpPoint3/Polygon2D2"]
+offset_left = -33.0
+offset_top = -11.0
+offset_right = 37.0
+offset_bottom = 12.0
+theme_override_font_sizes/font_size = 13
+text = "Hub"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spawn 1" type="Node2D" parent="WarpPoint3"]
+
 [connection signal="_highlight" from="WarpPoint" to="WarpPoint/Polygon2D2" method="onoff"]
+[connection signal="_highlight" from="WarpPoint3" to="WarpPoint3/Polygon2D2" method="onoff"]

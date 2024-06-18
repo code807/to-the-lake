@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4h85be6j7tj5"]
+
+[ext_resource type="Script" path="res://Classes/level.gd" id="1_e8k85"]
+[ext_resource type="Script" path="res://Classes/warp_point.gd" id="2_o1uxk"]
+[ext_resource type="Script" path="res://Scenes/TriangleLightup.gd" id="3_4t6gs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ujsl1"]
+
+[node name="Hub Level" type="Node2D" node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("1_e8k85")
+spawn_points = [NodePath("Spawn")]
+
+[node name="Spawn" type="Node2D" parent="."]
+
+[node name="WarpPoint" type="Area2D" parent="."]
+position = Vector2(0, 54)
+script = ExtResource("2_o1uxk")
+destination = "test_puzzle_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarpPoint"]
+shape = SubResource("CircleShape2D_ujsl1")
+
+[node name="Polygon2D2" type="Polygon2D" parent="WarpPoint"]
+position = Vector2(-1, -1)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-13, 11, 0, -16, 15, 11)
+script = ExtResource("3_4t6gs")
+
+[node name="Label" type="Label" parent="WarpPoint/Polygon2D2"]
+offset_left = -33.0
+offset_top = -11.0
+offset_right = 37.0
+offset_bottom = 12.0
+theme_override_font_sizes/font_size = 13
+text = "Test Puzzle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spawn 1" type="Node2D" parent="WarpPoint"]
+
+[node name="WarpPoint2" type="Area2D" parent="."]
+position = Vector2(-75, 16)
+script = ExtResource("2_o1uxk")
+destination = "test_level"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarpPoint2"]
+shape = SubResource("CircleShape2D_ujsl1")
+
+[node name="Polygon2D2" type="Polygon2D" parent="WarpPoint2"]
+position = Vector2(-1, -1)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-13, 11, 0, -16, 15, 11)
+script = ExtResource("3_4t6gs")
+
+[node name="Label" type="Label" parent="WarpPoint2/Polygon2D2"]
+offset_left = -33.0
+offset_top = -11.0
+offset_right = 37.0
+offset_bottom = 12.0
+theme_override_font_sizes/font_size = 13
+text = "First Demo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spawn 1" type="Node2D" parent="WarpPoint2"]
+
+[node name="WarpPoint3" type="Area2D" parent="."]
+position = Vector2(70, 20)
+script = ExtResource("2_o1uxk")
+destination = "test_level_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarpPoint3"]
+shape = SubResource("CircleShape2D_ujsl1")
+
+[node name="Polygon2D2" type="Polygon2D" parent="WarpPoint3"]
+position = Vector2(-1, -1)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-13, 11, 0, -16, 15, 11)
+script = ExtResource("3_4t6gs")
+
+[node name="Label" type="Label" parent="WarpPoint3/Polygon2D2"]
+offset_left = -33.0
+offset_top = -11.0
+offset_right = 37.0
+offset_bottom = 12.0
+theme_override_font_sizes/font_size = 13
+text = "Test 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spawn 1" type="Node2D" parent="WarpPoint3"]
+
+[connection signal="_highlight" from="WarpPoint" to="WarpPoint/Polygon2D2" method="onoff"]
+[connection signal="_highlight" from="WarpPoint2" to="WarpPoint2/Polygon2D2" method="onoff"]
+[connection signal="_highlight" from="WarpPoint3" to="WarpPoint3/Polygon2D2" method="onoff"]

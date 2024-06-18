@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://cw6m8by2uvbo6"]
 
-[ext_resource type="Script" path="res://CharacterController.gd" id="1_yfsd0"]
+[ext_resource type="Script" path="res://Player.gd" id="1_yxtfj"]
 [ext_resource type="Texture2D" uid="uid://8r5d2l2h7ni6" path="res://Assets/wanderer sprite.png" id="2_sjbbh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6fjtv"]
@@ -209,7 +209,7 @@ floor_block_on_wall = false
 floor_max_angle = 0.0
 floor_snap_length = 0.0
 platform_on_leave = 2
-script = ExtResource("1_yfsd0")
+script = ExtResource("1_yxtfj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

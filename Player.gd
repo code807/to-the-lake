@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 
 signal dialogue_trigger(Array)
 signal warp_trigger(String, int)
+signal one_off(int)
 
 const SPEED = 75.0
 const MOVEMENT_SMOOTHING = 10
@@ -10,7 +11,7 @@ const STOP_SMOOTHING = 50
 var interactables: Array[Interactable] = []
 var closest = null
 
-var animindex = 1
+var animindex = -1
 var animlist = ["walk_up", "walk_left", "walk_right", "walk_down"]
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -62,9 +63,12 @@ func _checkanim():
 
 func _on_area_2d_area_entered(area):
 	if area is Interactable:
-			interactables.append(area)
+		interactables.append(area)
 	elif area is DialogueTrigger:
-			dialogue_trigger.emit(area.dialogue)
+		dialogue_trigger.emit(area.dialogue)
+		if area.oneoff == true:
+			emit_signal("one_off", area.id)
+			area.queue_free()
 
 
 func _on_area_2d_area_exited(area):
