@@ -3,7 +3,7 @@ extends TileMap
 
 
 # Called when the node enters the scene tree for the first time.
-func aaa():
+func _enter_tree():
 	var tiles: TileSetAtlasSource = tile_set.get_source(tile_set.get_source_id(3))
 	
 	for y in range(49):
