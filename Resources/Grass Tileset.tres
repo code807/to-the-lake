@@ -1,8 +1,7 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://bu1pmm8hkbq5q"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://bu1pmm8hkbq5q"]
 
 [ext_resource type="Texture2D" uid="uid://d0dxjja424eq0" path="res://Assets/grass tiles.png" id="1_ova2y"]
 [ext_resource type="Texture2D" uid="uid://bui4dpwcepag7" path="res://Assets/single ground.png" id="2_6tfv8"]
-[ext_resource type="Texture2D" uid="uid://hnfj5jvohbcy" path="res://Resources/water_texture.tres" id="3_3cc1x"]
 [ext_resource type="Texture2D" uid="uid://p5k6eisu138w" path="res://Assets/lake tiles-sheet.png" id="5_m8d5b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e6bnw"]
@@ -364,56 +363,6 @@ texture = ExtResource("1_ova2y")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dsuhb"]
 texture = ExtResource("2_6tfv8")
 0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5wk4"]
-texture = ExtResource("3_3cc1x")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-5:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrwme"]
 texture = ExtResource("5_m8d5b")
@@ -1366,5 +1315,4 @@ terrain_set_0/terrain_1/name = "Water Terrain"
 terrain_set_0/terrain_1/color = Color(1, 0.556863, 0.733333, 1)
 sources/0 = SubResource("TileSetAtlasSource_e6bnw")
 sources/1 = SubResource("TileSetAtlasSource_dsuhb")
-sources/5 = SubResource("TileSetAtlasSource_x5wk4")
 sources/6 = SubResource("TileSetAtlasSource_mrwme")

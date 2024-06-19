@@ -1,0 +1,295 @@
+[gd_resource type="TileSet" load_steps=21 format=3 uid="uid://c4ocbxrne5nh"]
+
+[ext_resource type="Texture2D" uid="uid://b6386lvannw0d" path="res://Assets/foliage_tiles.png" id="1_u52vl"]
+[ext_resource type="Texture2D" uid="uid://dbl535fvvoxx0" path="res://Assets/bushtiles.png" id="2_b660i"]
+[ext_resource type="Texture2D" uid="uid://d08o1nfl7o8kv" path="res://Assets/twigs tiles.png" id="3_ggdgj"]
+[ext_resource type="Texture2D" uid="uid://godpnkske2vj" path="res://Assets/rock tiles.png" id="4_yhm84"]
+[ext_resource type="Texture2D" uid="uid://bfsr4jwpamdpj" path="res://Assets/runestone tiles.png" id="5_dno3w"]
+[ext_resource type="Texture2D" uid="uid://uo6wmrcnp4ll" path="res://Assets/leaf_tiles.png" id="6_ke7k5"]
+[ext_resource type="Texture2D" uid="uid://2ivdetonc3jd" path="res://Assets/tree tiles.png" id="7_rhomn"]
+[ext_resource type="PackedScene" uid="uid://b7f4s2v60qphi" path="res://Scenes/big_tree.tscn" id="8_dyh4k"]
+[ext_resource type="PackedScene" uid="uid://binmxl23qvrly" path="res://Scenes/med_tree.tscn" id="9_p5qpr"]
+[ext_resource type="PackedScene" uid="uid://j2vq1x18xefi" path="res://Scenes/smol_tree.tscn" id="10_37s1l"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fm4uk"]
+texture = ExtResource("1_u52vl")
+0:0/next_alternative_id = 3
+0:0/0 = 0
+0:0/0/y_sort_origin = 5
+0:0/1 = 1
+0:0/1/flip_h = true
+1:0/next_alternative_id = 2
+1:0/0 = 0
+1:0/0/y_sort_origin = 5
+1:0/1 = 1
+1:0/1/flip_h = true
+2:0/next_alternative_id = 2
+2:0/0 = 0
+2:0/0/y_sort_origin = 5
+2:0/1 = 1
+2:0/1/flip_h = true
+0:1/next_alternative_id = 2
+0:1/0 = 0
+0:1/0/y_sort_origin = 1
+0:1/1 = 1
+0:1/1/flip_h = true
+1:1/next_alternative_id = 2
+1:1/0 = 0
+1:1/1 = 1
+1:1/1/flip_h = true
+2:1/next_alternative_id = 2
+2:1/0 = 0
+2:1/1 = 1
+2:1/1/flip_h = true
+0:2/next_alternative_id = 2
+0:2/0 = 0
+0:2/0/y_sort_origin = 4
+0:2/1 = 1
+0:2/1/flip_h = true
+1:2/next_alternative_id = 2
+1:2/0 = 0
+1:2/0/y_sort_origin = 5
+1:2/1 = 1
+1:2/1/flip_h = true
+2:2/next_alternative_id = 2
+2:2/0 = 0
+2:2/0/y_sort_origin = 5
+2:2/1 = 1
+2:2/1/flip_h = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8ung"]
+texture = ExtResource("2_b660i")
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/0 = 0
+0:0/0/y_sort_origin = 6
+0:3/size_in_atlas = Vector2i(3, 3)
+0:3/0 = 0
+0:3/0/y_sort_origin = 6
+0:6/size_in_atlas = Vector2i(3, 3)
+0:6/0 = 0
+0:6/0/y_sort_origin = 6
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qu4h"]
+texture = ExtResource("3_ggdgj")
+0:0/next_alternative_id = 14
+0:0/0 = 0
+0:0/0/y_sort_origin = -8
+0:0/5 = 5
+0:0/5/flip_h = true
+0:0/5/y_sort_origin = -8
+0:0/10 = 10
+0:0/10/flip_v = true
+0:0/10/y_sort_origin = -8
+0:0/11 = 11
+0:0/11/flip_h = true
+0:0/11/flip_v = true
+0:0/11/y_sort_origin = -8
+0:1/next_alternative_id = 4
+0:1/0 = 0
+0:1/0/y_sort_origin = -8
+0:1/1 = 1
+0:1/1/flip_h = true
+0:1/1/y_sort_origin = -8
+0:1/2 = 2
+0:1/2/flip_v = true
+0:1/2/y_sort_origin = -8
+0:1/3 = 3
+0:1/3/flip_h = true
+0:1/3/flip_v = true
+0:1/3/y_sort_origin = -8
+1:0/next_alternative_id = 4
+1:0/0 = 0
+1:0/0/y_sort_origin = -8
+1:0/1 = 1
+1:0/1/flip_h = true
+1:0/1/y_sort_origin = -8
+1:0/2 = 2
+1:0/2/flip_v = true
+1:0/2/y_sort_origin = -8
+1:0/3 = 3
+1:0/3/flip_h = true
+1:0/3/flip_v = true
+1:0/3/y_sort_origin = -8
+1:1/next_alternative_id = 4
+1:1/0 = 0
+1:1/0/y_sort_origin = -8
+1:1/1 = 1
+1:1/1/flip_h = true
+1:1/1/y_sort_origin = -8
+1:1/2 = 2
+1:1/2/flip_v = true
+1:1/2/y_sort_origin = -8
+1:1/3 = 3
+1:1/3/flip_h = true
+1:1/3/flip_v = true
+1:1/3/y_sort_origin = -8
+2:1/next_alternative_id = 4
+2:1/0 = 0
+2:1/0/y_sort_origin = -8
+2:1/1 = 1
+2:1/1/flip_h = true
+2:1/1/y_sort_origin = -8
+2:1/2 = 2
+2:1/2/flip_v = true
+2:1/2/y_sort_origin = -8
+2:1/3 = 3
+2:1/3/flip_h = true
+2:1/3/flip_v = true
+2:1/3/y_sort_origin = -8
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_27agg"]
+texture = ExtResource("4_yhm84")
+0:0/0 = 0
+0:0/0/y_sort_origin = 5
+1:0/0 = 0
+1:0/0/y_sort_origin = 2
+2:0/0 = 0
+2:0/0/y_sort_origin = 5
+3:0/0 = 0
+3:0/0/y_sort_origin = 5
+0:1/0 = 0
+0:1/0/y_sort_origin = 5
+1:1/0 = 0
+1:1/0/y_sort_origin = 3
+2:1/0 = 0
+2:1/0/y_sort_origin = 4
+3:1/0 = 0
+3:1/0/y_sort_origin = 3
+0:2/0 = 0
+0:2/0/y_sort_origin = 5
+1:2/0 = 0
+1:2/0/y_sort_origin = 5
+2:2/0 = 0
+2:2/0/y_sort_origin = 1
+3:2/0 = 0
+3:2/0/y_sort_origin = 6
+0:3/0 = 0
+0:3/0/y_sort_origin = 3
+1:3/0 = 0
+1:3/0/y_sort_origin = 2
+2:3/size_in_atlas = Vector2i(2, 1)
+2:3/0 = 0
+2:3/0/y_sort_origin = 5
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xqymm"]
+texture = ExtResource("5_dno3w")
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/0 = 0
+1:0/size_in_atlas = Vector2i(1, 2)
+1:0/0 = 0
+2:0/size_in_atlas = Vector2i(1, 2)
+2:0/0 = 0
+3:0/size_in_atlas = Vector2i(1, 2)
+3:0/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+5:0/0 = 0
+6:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j48qk"]
+texture = ExtResource("6_ke7k5")
+0:0/next_alternative_id = 4
+0:0/0 = 0
+0:0/0/y_sort_origin = -8
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/1/y_sort_origin = -8
+0:0/2 = 2
+0:0/2/flip_v = true
+0:0/2/y_sort_origin = -8
+0:0/3 = 3
+0:0/3/transpose = true
+0:0/3/y_sort_origin = -8
+1:0/next_alternative_id = 4
+1:0/0 = 0
+1:0/0/y_sort_origin = -8
+1:0/1 = 1
+1:0/1/flip_h = true
+1:0/1/y_sort_origin = -8
+1:0/2 = 2
+1:0/2/flip_v = true
+1:0/2/y_sort_origin = -8
+1:0/3 = 3
+1:0/3/transpose = true
+1:0/3/y_sort_origin = -8
+0:1/next_alternative_id = 4
+0:1/0 = 0
+0:1/0/y_sort_origin = -8
+0:1/1 = 1
+0:1/1/flip_h = true
+0:1/1/y_sort_origin = -8
+0:1/2 = 2
+0:1/2/flip_v = true
+0:1/2/y_sort_origin = -8
+0:1/3 = 3
+0:1/3/y_sort_origin = -8
+1:1/next_alternative_id = 4
+1:1/0 = 0
+1:1/0/y_sort_origin = -8
+1:1/1 = 1
+1:1/1/flip_h = true
+1:1/1/y_sort_origin = -8
+1:1/2 = 2
+1:1/2/flip_v = true
+1:1/2/y_sort_origin = -8
+1:1/3 = 3
+1:1/3/transpose = true
+1:1/3/y_sort_origin = -8
+0:2/next_alternative_id = 4
+0:2/0 = 0
+0:2/0/y_sort_origin = -8
+0:2/1 = 1
+0:2/1/flip_h = true
+0:2/1/y_sort_origin = -8
+0:2/2 = 2
+0:2/2/flip_v = true
+0:2/2/y_sort_origin = -8
+0:2/3 = 3
+0:2/3/transpose = true
+0:2/3/y_sort_origin = -8
+1:2/next_alternative_id = 4
+1:2/0 = 0
+1:2/0/y_sort_origin = -8
+1:2/1 = 1
+1:2/1/flip_h = true
+1:2/1/y_sort_origin = -8
+1:2/2 = 2
+1:2/2/flip_v = true
+1:2/2/y_sort_origin = -8
+1:2/3 = 3
+1:2/3/transpose = true
+1:2/3/y_sort_origin = -8
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yi5gt"]
+texture = ExtResource("7_rhomn")
+0:0/size_in_atlas = Vector2i(7, 8)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(1, 39)
+0:8/size_in_atlas = Vector2i(7, 6)
+0:8/0 = 0
+0:8/0/texture_origin = Vector2i(1, 24)
+0:14/size_in_atlas = Vector2i(7, 5)
+0:14/0 = 0
+0:14/0/texture_origin = Vector2i(-1, 26)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_erbaq"]
+scenes/1/scene = ExtResource("8_dyh4k")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_8w4e4"]
+scenes/1/scene = ExtResource("9_p5qpr")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_l3unp"]
+scenes/1/scene = ExtResource("10_37s1l")
+
+[resource]
+sources/7 = SubResource("TileSetScenesCollectionSource_erbaq")
+sources/8 = SubResource("TileSetScenesCollectionSource_8w4e4")
+sources/9 = SubResource("TileSetScenesCollectionSource_l3unp")
+sources/10 = SubResource("TileSetAtlasSource_3qu4h")
+sources/11 = SubResource("TileSetAtlasSource_27agg")
+sources/0 = SubResource("TileSetAtlasSource_fm4uk")
+sources/1 = SubResource("TileSetAtlasSource_g8ung")
+sources/2 = SubResource("TileSetAtlasSource_xqymm")
+sources/3 = SubResource("TileSetAtlasSource_j48qk")
+sources/4 = SubResource("TileSetAtlasSource_yi5gt")
