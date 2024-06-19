@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://poevu2q14t3g"
-path="res://.godot/imported/lake tiles.png-b218b40ee430c5274eec04dd4482742d.ctex"
+uid="uid://bhb3hw6xbj847"
+path="res://.godot/imported/lake tiles5.png-0119acaea2debdbfae9955c982c08f42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/lake tiles.png"
-dest_files=["res://.godot/imported/lake tiles.png-b218b40ee430c5274eec04dd4482742d.ctex"]
+source_file="res://Assets/lake animation/lake tiles5.png"
+dest_files=["res://.godot/imported/lake tiles5.png-0119acaea2debdbfae9955c982c08f42.ctex"]
 
 [params]
 

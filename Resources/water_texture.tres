@@ -1,71 +1,38 @@
-[gd_resource type="AnimatedTexture" load_steps=13 format=3 uid="uid://hnfj5jvohbcy"]
+[gd_resource type="AnimatedTexture" load_steps=12 format=3 uid="uid://hnfj5jvohbcy"]
 
-[ext_resource type="Texture2D" uid="uid://poevu2q14t3g" path="res://Assets/lake tiles.png" id="1_cid76"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6tmo3"]
-atlas = ExtResource("1_cid76")
-region = Rect2(0, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5u1ig"]
-atlas = ExtResource("1_cid76")
-region = Rect2(112, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hinei"]
-atlas = ExtResource("1_cid76")
-region = Rect2(1120, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0cd8m"]
-atlas = ExtResource("1_cid76")
-region = Rect2(224, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j4dc6"]
-atlas = ExtResource("1_cid76")
-region = Rect2(336, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gom0n"]
-atlas = ExtResource("1_cid76")
-region = Rect2(448, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c7y83"]
-atlas = ExtResource("1_cid76")
-region = Rect2(560, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_klsdm"]
-atlas = ExtResource("1_cid76")
-region = Rect2(672, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_80fhw"]
-atlas = ExtResource("1_cid76")
-region = Rect2(784, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ha8iw"]
-atlas = ExtResource("1_cid76")
-region = Rect2(896, 0, 112, 112)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_45vml"]
-atlas = ExtResource("1_cid76")
-region = Rect2(1008, 0, 112, 112)
+[ext_resource type="Texture2D" uid="uid://cmygphx5mnljw" path="res://Assets/lake animation/lake tiles1.png" id="1_mevhq"]
+[ext_resource type="Texture2D" uid="uid://begc1khrnqvf1" path="res://Assets/lake animation/lake tiles2.png" id="2_vsjt1"]
+[ext_resource type="Texture2D" uid="uid://56d7c2mi6x4b" path="res://Assets/lake animation/lake tiles11.png" id="3_6fuaj"]
+[ext_resource type="Texture2D" uid="uid://c4p3l7hn6qiky" path="res://Assets/lake animation/lake tiles3.png" id="4_1bnoe"]
+[ext_resource type="Texture2D" uid="uid://bht14syytt8r6" path="res://Assets/lake animation/lake tiles4.png" id="5_ogwfl"]
+[ext_resource type="Texture2D" uid="uid://bhb3hw6xbj847" path="res://Assets/lake animation/lake tiles5.png" id="6_qk0y2"]
+[ext_resource type="Texture2D" uid="uid://bk4jo7llqcssh" path="res://Assets/lake animation/lake tiles6.png" id="7_hbxpj"]
+[ext_resource type="Texture2D" uid="uid://cdh6dbufxeb38" path="res://Assets/lake animation/lake tiles7.png" id="8_2rjgl"]
+[ext_resource type="Texture2D" uid="uid://bklee6uqotw2c" path="res://Assets/lake animation/lake tiles8.png" id="9_a8dwl"]
+[ext_resource type="Texture2D" uid="uid://b3v1tbbgl83rx" path="res://Assets/lake animation/lake tiles9.png" id="10_ryfab"]
+[ext_resource type="Texture2D" uid="uid://cc100y311skj0" path="res://Assets/lake animation/lake tiles10.png" id="11_nynr6"]
 
 [resource]
 frames = 11
-frame_0/texture = SubResource("AtlasTexture_6tmo3")
-frame_1/texture = SubResource("AtlasTexture_5u1ig")
+speed_scale = 0.2
+frame_0/texture = ExtResource("1_mevhq")
+frame_1/texture = ExtResource("2_vsjt1")
 frame_1/duration = 1.0
-frame_2/texture = SubResource("AtlasTexture_0cd8m")
+frame_2/texture = ExtResource("4_1bnoe")
 frame_2/duration = 1.0
-frame_3/texture = SubResource("AtlasTexture_j4dc6")
+frame_3/texture = ExtResource("5_ogwfl")
 frame_3/duration = 1.0
-frame_4/texture = SubResource("AtlasTexture_gom0n")
+frame_4/texture = ExtResource("6_qk0y2")
 frame_4/duration = 1.0
-frame_5/texture = SubResource("AtlasTexture_c7y83")
+frame_5/texture = ExtResource("7_hbxpj")
 frame_5/duration = 1.0
-frame_6/texture = SubResource("AtlasTexture_klsdm")
+frame_6/texture = ExtResource("8_2rjgl")
 frame_6/duration = 1.0
-frame_7/texture = SubResource("AtlasTexture_80fhw")
+frame_7/texture = ExtResource("9_a8dwl")
 frame_7/duration = 1.0
-frame_8/texture = SubResource("AtlasTexture_ha8iw")
+frame_8/texture = ExtResource("10_ryfab")
 frame_8/duration = 1.0
-frame_9/texture = SubResource("AtlasTexture_45vml")
+frame_9/texture = ExtResource("11_nynr6")
 frame_9/duration = 1.0
-frame_10/texture = SubResource("AtlasTexture_hinei")
+frame_10/texture = ExtResource("3_6fuaj")
 frame_10/duration = 1.0
