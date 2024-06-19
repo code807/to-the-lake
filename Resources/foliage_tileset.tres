@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=21 format=3 uid="uid://c4ocbxrne5nh"]
+[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://c4ocbxrne5nh"]
 
 [ext_resource type="Texture2D" uid="uid://b6386lvannw0d" path="res://Assets/foliage_tiles.png" id="1_u52vl"]
 [ext_resource type="Texture2D" uid="uid://dbl535fvvoxx0" path="res://Assets/bushtiles.png" id="2_b660i"]
@@ -7,9 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bfsr4jwpamdpj" path="res://Assets/runestone tiles.png" id="5_dno3w"]
 [ext_resource type="Texture2D" uid="uid://uo6wmrcnp4ll" path="res://Assets/leaf_tiles.png" id="6_ke7k5"]
 [ext_resource type="Texture2D" uid="uid://2ivdetonc3jd" path="res://Assets/tree tiles.png" id="7_rhomn"]
-[ext_resource type="PackedScene" uid="uid://b7f4s2v60qphi" path="res://Scenes/big_tree.tscn" id="8_dyh4k"]
-[ext_resource type="PackedScene" uid="uid://binmxl23qvrly" path="res://Scenes/med_tree.tscn" id="9_p5qpr"]
-[ext_resource type="PackedScene" uid="uid://j2vq1x18xefi" path="res://Scenes/smol_tree.tscn" id="10_37s1l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fm4uk"]
 texture = ExtResource("1_u52vl")
@@ -273,19 +270,7 @@ texture = ExtResource("7_rhomn")
 0:14/0 = 0
 0:14/0/texture_origin = Vector2i(-1, 26)
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_erbaq"]
-scenes/1/scene = ExtResource("8_dyh4k")
-
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_8w4e4"]
-scenes/1/scene = ExtResource("9_p5qpr")
-
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_l3unp"]
-scenes/1/scene = ExtResource("10_37s1l")
-
 [resource]
-sources/7 = SubResource("TileSetScenesCollectionSource_erbaq")
-sources/8 = SubResource("TileSetScenesCollectionSource_8w4e4")
-sources/9 = SubResource("TileSetScenesCollectionSource_l3unp")
 sources/10 = SubResource("TileSetAtlasSource_3qu4h")
 sources/11 = SubResource("TileSetAtlasSource_27agg")
 sources/0 = SubResource("TileSetAtlasSource_fm4uk")
