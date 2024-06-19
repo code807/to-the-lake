@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7f4s2v60qphi"]
+
+[ext_resource type="Texture2D" uid="uid://cquo5txkpk3j7" path="res://Assets/tree tiles.png" id="1_0fv1o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12n4f"]
+atlas = ExtResource("1_0fv1o")
+region = Rect2(0, 0, 114.235, 121.175)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5x0j6"]
+radius = 15.0
+height = 54.0
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = SubResource("AtlasTexture_12n4f")
+offset = Vector2(0, -42.735)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5x0j6")
