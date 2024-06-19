@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cfwnx2mosxenx"]
 
-[ext_resource type="Script" path="res://Dialogue.gd" id="1_0w767"]
+[ext_resource type="Script" path="res://Classes/Dialogue.gd" id="1_0w767"]
 [ext_resource type="FontFile" uid="uid://c7kk5rjhsmsbo" path="res://Assets/Magero.ttf" id="2_sjbm3"]
 [ext_resource type="PackedScene" uid="uid://cyr0sw47xyunp" path="res://Scenes/Dialog Box.tscn" id="3_6novt"]
 

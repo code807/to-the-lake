@@ -9,7 +9,7 @@
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("1_628or")
-spawn_points = [NodePath("Spawn"), NodePath("")]
+spawn_points = [NodePath("Spawn"), null]
 
 [node name="Spawn" type="Node2D" parent="."]
 position = Vector2(157, 125)

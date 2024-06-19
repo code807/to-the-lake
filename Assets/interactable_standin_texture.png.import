@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://casj1tmsfdftu"
-path="res://.godot/imported/character_standin_sprite.png-90ed8f9709a71259427958ed56c7e62f.ctex"
+uid="uid://dc4nwky4oe0f3"
+path="res://.godot/imported/interactable_standin_texture.png-c7a235df89cb732f112e9b5767720bbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character_standin_sprite.png"
-dest_files=["res://.godot/imported/character_standin_sprite.png-90ed8f9709a71259427958ed56c7e62f.ctex"]
+source_file="res://Assets/interactable_standin_texture.png"
+dest_files=["res://.godot/imported/interactable_standin_texture.png-c7a235df89cb732f112e9b5767720bbd.ctex"]
 
 [params]
 

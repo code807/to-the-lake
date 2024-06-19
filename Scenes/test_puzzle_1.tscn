@@ -1,15 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://c064kg605cttw"]
+[gd_scene load_steps=22 format=3 uid="uid://c064kg605cttw"]
 
 [ext_resource type="TileSet" uid="uid://bu1pmm8hkbq5q" path="res://Resources/Grass Tileset.tres" id="1_eqg1j"]
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_wh7oy"]
 [ext_resource type="TileSet" uid="uid://c8q88b71hsd1h" path="res://Resources/Debug Tileset.tres" id="3_jcdt4"]
 [ext_resource type="Script" path="res://Classes/warp_point.gd" id="4_kqmes"]
 [ext_resource type="Script" path="res://Scenes/TriangleLightup.gd" id="5_esw77"]
-[ext_resource type="Script" path="res://interactable.gd" id="6_2epaf"]
 [ext_resource type="Script" path="res://Scenes/Pushable.gd" id="6_e2pqn"]
-[ext_resource type="Texture2D" uid="uid://bfsr4jwpamdpj" path="res://Assets/runestone tiles.png" id="7_cpcsi"]
-[ext_resource type="Script" path="res://dialogue_trigger.gd" id="9_2exmv"]
-[ext_resource type="Script" path="res://dialogue_resource.gd" id="10_0ovtx"]
+[ext_resource type="Texture2D" uid="uid://bvnqebvg6am54" path="res://Assets/runestone tiles.png" id="7_cpcsi"]
+[ext_resource type="Script" path="res://Classes/interactable.gd" id="8_00k53"]
+[ext_resource type="Script" path="res://Classes/dialogue_trigger.gd" id="9_3gpg5"]
+[ext_resource type="Script" path="res://Classes/dialogue_resource.gd" id="10_f0r46"]
+[ext_resource type="Script" path="res://Scripts/beast_trap.gd" id="11_61mdj"]
+[ext_resource type="Texture2D" uid="uid://bbamu0bmow0n6" path="res://Assets/beast trap tile.png" id="12_fl0dl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_78pgg"]
 
@@ -23,7 +25,7 @@ size = Vector2(14, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g26k2"]
 
 [sub_resource type="Resource" id="Resource_g38tn"]
-script = ExtResource("10_0ovtx")
+script = ExtResource("10_f0r46")
 story_teller = 1
 dialogue = "this also should only happen once"
 speech_time = 4.0
@@ -31,6 +33,16 @@ wait_time = 0.0
 pause_time = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2w055"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2row"]
+atlas = ExtResource("12_fl0dl")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fh1tx"]
+size = Vector2(16, 6.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83l38"]
+size = Vector2(20, 10)
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("spawn_points")]
 y_sort_enabled = true
@@ -54,7 +66,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262153, 0, 0, 262152, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0, 458759, 0, 0, 524295, 0, 0, 589831, 0, 0, 655367, 0, 0, 720903, 0, 0, 720904, 0, 0, 786440, 0, 0, 851976, 0, 0, 851977, 0, 0, 917513, 0, 0, 917514, 0, 0, 983050, 0, 0, 983051, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1114124, 0, 0, 1179661, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1310734, 0, 0, 1310735, 0, 0, 1376271, 0, 0, 1376272, 0, 0, 1441808, 0, 0, 1507345, 0, 0, 1572881, 0, 0, 1572882, 0, 0, 1638418, 0, 0, 1703954, 0, 0, 1703955, 0, 0, 1769491, 0, 0, 1769492, 0, 0, 1835029, 0, 0, 1835030, 0, 0, 1835031, 0, 0, 1835032, 0, 0, 1900568, 0, 0, 1900569, 0, 0, 1900570, 0, 0, 1900571, 0, 0, 1900572, 0, 0, 1900573, 0, 0, 1835037, 0, 0, 1835038, 0, 0, 1835039, 0, 0, 1769504, 0, 0, 1769505, 0, 0, 1769506, 0, 0, 1703970, 0, 0, 1638434, 0, 0, 1638435, 0, 0, 1572900, 0, 0, 1572901, 0, 0, 1507365, 0, 0, 1507366, 0, 0, 1507367, 0, 0, 1572903, 0, 0, 1572904, 0, 0, 1638440, 0, 0, 1638441, 0, 0, 1703978, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 393235, 0, 0, 393236, 0, 0, 458772, 0, 0, 458773, 0, 0, 524309, 0, 0, 524310, 0, 0, 589846, 0, 0, 589847, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 589852, 0, 0, 589853, 0, 0, 524318, 0, 0, 458783, 0, 0, 458784, 0, 0, 458785, 0, 0, 458786, 0, 0, 458787, 0, 0, 458788, 0, 0, 458789, 0, 0, 458790, 0, 0, 458791, 0, 0, 458792, 0, 0, 458793, 0, 0, 458794, 0, 0, 458795, 0, 0, 524332, 0, 0, 524333, 0, 0, 524334, 0, 0, 524335, 0, 0, 589872, 0, 0, 589873, 0, 0, 589874, 0, 0, 655410, 0, 0, 655411, 0, 0, 655412, 0, 0, 720949, 0, 0, 720950, 0, 0, 786486, 0, 0, 786487, 0, 0, 852023, 0, 0, 720918, 0, 0, 851993, 0, 0, 786461, 0, 0, 720923, 0, 0, 589857, 0, 0, 524319, 0, 0, 524324, 0, 0, 524328, 0, 0, 655403, 0, 0, 589870, 0, 0, 720945, 0, 0, 786484, 0, 0, 983093, 0, 0, 917554, 0, 0, 1572910, 0, 0, 1507371, 0, 0, 1638444, 0, 0, 1376297, 0, 0, 1376290, 0, 0, 1507363, 0, 0, 1310758, 0, 0, 1507360, 0, 0, 1703967, 0, 0, 1572889, 0, 0, 1703962, 0, 0, 1572891, 0, 0, 1507355, 0, 0, 1703965, 0, 0, 1638421, 0, 0, 1441811, 0, 0, 1769496, 0, 0, 1245201, 0, 0, 1114128, 0, 0, 1245199, 0, 0, 983053, 0, 0, 720905, 0, 0, 458760, 0, 0, 458762, 0, 0, 393226, 0, 0, 589832, 0, 0, 524296, 0, 0, 393224, 0, 0, 327689, 0, 0, 327688, 0, 0, 327691, 0, 0, 393230, 0, 0, 393232, 0, 0, 327696, 0, 0, 524307, 0, 0, 720951, 0, 0, 720952, 0, 0, 786488, 0, 0, 720953, 0, 0, 786489, 0, 0, 720954, 0, 0, 786490, 0, 0, 720955, 0, 0, 786491, 0, 0, 720956, 0, 0, 786492, 0, 0, 720957, 0, 0, 786493, 0, 0, 720958, 0, 0, 786494, 0, 0, 720959, 0, 0, 786495, 0, 0, 852024, 0, 0, 852025, 0, 0, 917562, 0, 0, 917563, 0, 0, 917564, 0, 0, 917565, 0, 0, 917566, 0, 0, 852030, 0, 0, 720960, 0, 0, 655424, 0, 0, 589888, 0, 0, 589889, 0, 0, 524353, 0, 0, 458817, 0, 0, 458818, 0, 0, 393282, 0, 0, 393283, 0, 0, 327747, 0, 0, 327748, 0, 0, 327749, 0, 0, 327750, 0, 0, 327751, 0, 0, 327752, 0, 0, 327757, 0, 0, 327758, 0, 0, 327759, 0, 0, 393295, 0, 0, 393296, 0, 0, 393297, 0, 0, 458834, 0, 0, 458835, 0, 0, 524371, 0, 0, 524372, 0, 0, 589908, 0, 0, 589909, 0, 0, 655445, 0, 0, 655446, 0, 0, 720982, 0, 0, 720983, 0, 0, 786519, 0, 0, 852055, 0, 0, 852056, 0, 0, 917592, 0, 0, 983129, 0, 0, 1048665, 0, 0, 1114202, 0, 0, 1179738, 0, 0, 1245274, 0, 0, 1310810, 0, 0, 1376347, 0, 0, 1441883, 0, 0, 1507419, 0, 0, 1572955, 0, 0, 1638491, 0, 0, 1704027, 0, 0, 1769563, 0, 0, 1835099, 0, 0, 1900635, 0, 0, 1900634, 0, 0, 1966170, 0, 0, 2031706, 0, 0, 2097241, 0, 0, 2162777, 0, 0, 2162776, 0, 0, 2228311, 0, 0, 2293847, 0, 0, 2293846, 0, 0, 2293845, 0, 0, 2359380, 0, 0, 2359379, 0, 0, 2359378, 0, 0, 2424914, 0, 0, 2424913, 0, 0, 2424912, 0, 0, 2490447, 0, 0, 2490446, 0, 0, 2490445, 0, 0, 2490444, 0, 0, 2490443, 0, 0, 2555978, 0, 0, 2555977, 0, 0, 2555976, 0, 0, 2555975, 0, 0, 2555974, 0, 0, 2555973, 0, 0, 2555972, 0, 0, 2490435, 0, 0, 2490434, 0, 0, 2490433, 0, 0, 2490432, 0, 0, 2490431, 0, 0, 2490430, 0, 0, 2424893, 0, 0, 2424892, 0, 0, 2424891, 0, 0, 2424890, 0, 0, 2359354, 0, 0, 2359353, 0, 0, 2359352, 0, 0, 2293815, 0, 0, 2228278, 0, 0, 2228277, 0, 0, 2162741, 0, 0, 2162740, 0, 0, 2097204, 0, 0, 2031667, 0, 0, 1966130, 0, 0, 1900594, 0, 0, 1900593, 0, 0, 1835057, 0, 0, 1835056, 0, 0, 1769520, 0, 0, 1703984, 0, 0, 1703983, 0, 0, 1638447, 0, 0, 1572911, 0, 0, 393285, 0, 0, 393284, 0, 0, 393281, 0, 0, 524352, 0, 0, 262215, 0, 0, 262216, 0, 0, 262214, 0, 0, 262213, 0, 0, 262212, 0, 0, 262221, 0, 0, 262222, 0, 0, 262223, 0, 0, 262224, 0, 0, 262225, 0, 0, 262226, 0, 0, 327762, 0, 0, 327763, 0, 0, 393299, 0, 0, 393300, 0, 0, 458836, 0, 0, 458837, 0, 0, 524373, 0, 0, 524374, 0, 0, 589910, 0, 0, 655447, 0, 0, 720984, 0, 0, 786520, 0, 0, 589911, 0, 0, 393298, 0, 0, 327761, 0, 0, 327760, 0, 0, 327753, 0, 0, 327754, 0, 0, 327755, 262144, 0, 327756, 0, 0, 262217, 0, 0, 262218, 0, 0, 262219, 262144, 0, 262220, 0, 0, 1638445, 0, 0, 1638443, 0, 0)
 
 [node name="WarpPoint" type="Area2D" parent="."]
-position = Vector2(1208, 71)
+position = Vector2(1208, 21)
 script = ExtResource("4_kqmes")
 destination = "test_level"
 
@@ -70,7 +82,7 @@ script = ExtResource("5_esw77")
 [node name="Spawn 1" type="Node2D" parent="WarpPoint"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(239, 214)
+position = Vector2(1211, 147)
 gravity_scale = 0.0
 lock_rotation = true
 linear_damp = 3.0
@@ -86,15 +98,15 @@ shape = SubResource("RectangleShape2D_28seo")
 
 [node name="Interactable" type="Area2D" parent="RigidBody2D"]
 position = Vector2(0, -6)
-script = ExtResource("6_2epaf")
+script = ExtResource("8_00k53")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Interactable"]
 shape = SubResource("RectangleShape2D_g26k2")
 
 [node name="DialogueTrigger" type="Area2D" parent="."]
 position = Vector2(136, 157)
-script = ExtResource("9_2exmv")
-dialogue = Array[ExtResource("10_0ovtx")]([SubResource("Resource_g38tn")])
+script = ExtResource("9_3gpg5")
+dialogue = Array[ExtResource("10_f0r46")]([SubResource("Resource_g38tn")])
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DialogueTrigger"]
 polygon = PackedVector2Array(-5, -10, 6, -11, 12, -5, 13, 4, 6, 11, -6, 11, -12, 3, -9, -5)
@@ -104,8 +116,8 @@ polygon = PackedVector2Array(-4, -10, 6, -11, 12, -5, 13, 4, 6, 11, -6, 11, -12,
 
 [node name="DialogueTrigger2" type="Area2D" parent="."]
 position = Vector2(136, 115)
-script = ExtResource("9_2exmv")
-dialogue = Array[ExtResource("10_0ovtx")]([SubResource("Resource_g38tn")])
+script = ExtResource("9_3gpg5")
+dialogue = Array[ExtResource("10_f0r46")]([SubResource("Resource_g38tn")])
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DialogueTrigger2"]
 polygon = PackedVector2Array(-5, -10, 6, -11, 12, -5, 13, 4, 6, 11, -6, 11, -12, 3, -9, -5)
@@ -139,6 +151,27 @@ vertical_alignment = 1
 
 [node name="Spawn 1" type="Node2D" parent="WarpPoint3"]
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1208, 79)
+script = ExtResource("11_61mdj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = SubResource("AtlasTexture_c2row")
+offset = Vector2(0, -3.395)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1.25)
+shape = SubResource("RectangleShape2D_fh1tx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D"]
+position = Vector2(0, -3)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_83l38")
+
 [connection signal="_highlight" from="WarpPoint" to="WarpPoint/Polygon2D2" method="onoff"]
 [connection signal="interacted" from="RigidBody2D/Interactable" to="RigidBody2D" method="pushed"]
 [connection signal="_highlight" from="WarpPoint3" to="WarpPoint3/Polygon2D2" method="onoff"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

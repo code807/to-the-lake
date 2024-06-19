@@ -2,14 +2,14 @@ class_name Main extends Control
 
 var lname: String
 var player: Player
-var player_scene = preload("res://Player.tscn")
+var player_scene = preload("res://Scenes/Player.tscn")
 @onready var dialogue_manager: DialogueManager = $HUD/DialogueManager
 var spawn: Vector2
 const levels := {
-	"test_level": preload("res://test_level.tscn"),
+	"test_level": preload("res://Scenes/test_level.tscn"),
 	"test_level_1": preload("res://Scenes/test_level_1.tscn"),
 	"test_puzzle_1": preload("res://Scenes/test_puzzle_1.tscn"),
-	"hub": preload("res://hub_level.tscn")
+	"hub": preload("res://Scenes/hub_level.tscn")
 }
 var level:Level
 

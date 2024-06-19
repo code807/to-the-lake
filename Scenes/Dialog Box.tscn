@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyr0sw47xyunp"]
 
-[ext_resource type="Script" path="res://dialogue_box.gd" id="1_6ikvb"]
+[ext_resource type="Script" path="res://Classes/dialogue_box.gd" id="1_6ikvb"]
 [ext_resource type="Texture2D" uid="uid://bp6c0h80wd30k" path="res://Assets/dialogueninepatch.png" id="1_euc8w"]
 [ext_resource type="FontFile" uid="uid://bmo4kus8ha582" path="res://Assets/m6x11.ttf" id="2_lxilw"]
 
