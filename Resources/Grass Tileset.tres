@@ -417,6 +417,7 @@ texture = ExtResource("3_3cc1x")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrwme"]
 texture = ExtResource("5_m8d5b")
+0:0/animation_columns = 11
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 1
