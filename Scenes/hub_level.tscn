@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4h85be6j7tj5"]
+[gd_scene load_steps=7 format=3 uid="uid://c4qwu672cukqm"]
 
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_e8k85"]
 [ext_resource type="Script" path="res://Classes/warp_point.gd" id="2_o1uxk"]
 [ext_resource type="Script" path="res://Scenes/TriangleLightup.gd" id="3_4t6gs"]
+[ext_resource type="TileSet" uid="uid://bu1pmm8hkbq5q" path="res://Resources/Grass Tileset.tres" id="4_kqvwv"]
+[ext_resource type="Texture2D" uid="uid://hnfj5jvohbcy" path="res://Resources/water_texture.tres" id="5_7xvmy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ujsl1"]
 
@@ -89,6 +91,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Spawn 1" type="Node2D" parent="WarpPoint3"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("4_kqvwv")
+format = 2
+layer_0/tile_data = PackedInt32Array(-393215, 327683, 5, -393216, 327683, 5, -327681, 327683, 5, -262145, 327683, 5, -196609, 327683, 5, -262144, 327683, 5, -262143, 327683, 5, -327679, 327683, 5, -327678, 327683, 5, -327677, 327683, 5, -393213, 327683, 5, -458749, 327683, 5, -458750, 327683, 5, -458751, 327683, 5, -458752, 327683, 5, -393217, 327683, 5, -393218, 327683, 5, -393219, 327683, 5, -327683, 327683, 5, -262147, 327683, 5, -262146, 327683, 5, -327680, 327683, 5, -393214, 327683, 5, -327682, 327683, 5, -262148, 327683, 5, -196611, 327683, 5, -196610, 327683, 5, -327684, 327683, 5, -262142, 3, 0, -131074, 327683, 5, -131073, 327683, 5, -196608, 327683, 5, -196607, 3, 0, -196606, 393219, 3, -262141, 65539, 0, -262140, 393219, 3, -327676, 3, 0, -393212, 327683, 5, -196612, 131075, 0, -131075, 131075, 0, -65538, 65539, 0, -65537, 65539, 0, -131072, 65539, 0, -131071, 393219, 3, -131076, 196611, 3, -196613, 65539, 0, -65539, 196611, 3, -196614, 196611, 3, -262150, 131075, 0, -327686, 131075, 2, -393221, 131075, 2, -393220, 327683, 5, -262149, 327683, 5, -262151, 196611, 3, -327687, 196611, 0, -393222, 196611, 0, -458757, 196611, 0, -458755, 131075, 2, -458756, 65539, 2, -458754, 327683, 5, -458753, 327683, 5, -524288, 327683, 5, -524287, 327683, 5, -524286, 3, 2, -327685, 327683, 5, -524290, 65539, 2, -524289, 65539, 2, -589824, 65539, 2, -589822, 393219, 0, -589823, 65539, 2, -524285, 65539, 2, -524284, 65539, 2, -458748, 327683, 5, -524291, 196611, 0, -524283, 393219, 0, -458747, 3, 1, -327675, 393219, 3, -393211, 3, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-160, 30)
+texture = ExtResource("5_7xvmy")
 
 [connection signal="_highlight" from="WarpPoint" to="WarpPoint/Polygon2D2" method="onoff"]
 [connection signal="_highlight" from="WarpPoint2" to="WarpPoint2/Polygon2D2" method="onoff"]

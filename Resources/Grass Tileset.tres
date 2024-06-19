@@ -1,7 +1,9 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bu1pmm8hkbq5q"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://bu1pmm8hkbq5q"]
 
 [ext_resource type="Texture2D" uid="uid://d0dxjja424eq0" path="res://Assets/grass tiles.png" id="1_ova2y"]
 [ext_resource type="Texture2D" uid="uid://bui4dpwcepag7" path="res://Assets/single ground.png" id="2_6tfv8"]
+[ext_resource type="Texture2D" uid="uid://poevu2q14t3g" path="res://Assets/lake tiles.png" id="3_nlspk"]
+[ext_resource type="Texture2D" uid="uid://k2s8kiexw2r3" path="res://icon.svg" id="4_vcf2i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e6bnw"]
 texture = ExtResource("1_ova2y")
@@ -363,9 +365,130 @@ texture = ExtResource("1_ova2y")
 texture = ExtResource("2_6tfv8")
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hdse"]
+texture = ExtResource("3_nlspk")
+0:0/next_alternative_id = 2
+0:0/animation_columns = 11
+0:0/animation_separation = Vector2i(6, 0)
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/animation_frame_8/duration = 1.0
+0:0/animation_frame_9/duration = 1.0
+0:0/animation_frame_10/duration = 1.0
+0:0/0 = 0
+1:0/animation_columns = 11
+1:0/animation_separation = Vector2i(6, 0)
+1:0/animation_frame_0/duration = 1.0
+1:0/animation_frame_1/duration = 1.0
+1:0/animation_frame_2/duration = 1.0
+1:0/animation_frame_3/duration = 1.0
+1:0/animation_frame_4/duration = 1.0
+1:0/animation_frame_5/duration = 1.0
+1:0/animation_frame_6/duration = 1.0
+1:0/animation_frame_7/duration = 1.0
+1:0/animation_frame_8/duration = 1.0
+1:0/animation_frame_9/duration = 1.0
+1:0/animation_frame_10/duration = 1.0
+1:0/0 = 0
+2:0/animation_columns = 11
+2:0/animation_separation = Vector2i(6, 0)
+2:0/animation_frame_0/duration = 1.0
+2:0/animation_frame_1/duration = 1.0
+2:0/animation_frame_2/duration = 1.0
+2:0/animation_frame_3/duration = 1.0
+2:0/animation_frame_4/duration = 1.0
+2:0/animation_frame_5/duration = 1.0
+2:0/animation_frame_6/duration = 1.0
+2:0/animation_frame_7/duration = 1.0
+2:0/animation_frame_8/duration = 1.0
+2:0/animation_frame_9/duration = 1.0
+2:0/animation_frame_10/duration = 1.0
+2:0/0 = 0
+3:0/animation_columns = 11
+3:0/animation_separation = Vector2i(6, 0)
+3:0/animation_frame_0/duration = 1.0
+3:0/animation_frame_1/duration = 1.0
+3:0/animation_frame_2/duration = 1.0
+3:0/animation_frame_3/duration = 1.0
+3:0/animation_frame_4/duration = 1.0
+3:0/animation_frame_5/duration = 1.0
+3:0/animation_frame_6/duration = 1.0
+3:0/animation_frame_7/duration = 1.0
+3:0/animation_frame_8/duration = 1.0
+3:0/animation_frame_9/duration = 1.0
+3:0/animation_frame_10/duration = 1.0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+6:1/0 = 0
+5:1/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+6:3/0 = 0
+5:3/0 = 0
+4:3/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+6:5/0 = 0
+5:5/0 = 0
+4:5/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sao0o"]
+texture = ExtResource("4_vcf2i")
+0:0/animation_columns = 3
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/0 = 0
+
 [resource]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.501961, 1, 0.25098, 1)
+terrain_set_0/terrain_1/name = "Water Terrain"
+terrain_set_0/terrain_1/color = Color(1, 0.556863, 0.733333, 1)
 sources/0 = SubResource("TileSetAtlasSource_e6bnw")
 sources/1 = SubResource("TileSetAtlasSource_dsuhb")
+sources/2 = SubResource("TileSetAtlasSource_1hdse")
+sources/3 = SubResource("TileSetAtlasSource_sao0o")
