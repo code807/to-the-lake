@@ -1,13 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://c064kg605cttw"]
+[gd_scene load_steps=24 format=3 uid="uid://c064kg605cttw"]
 
 [ext_resource type="TileSet" uid="uid://bu1pmm8hkbq5q" path="res://Resources/Grass Tileset.tres" id="1_eqg1j"]
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_wh7oy"]
 [ext_resource type="Script" path="res://Classes/warp_point.gd" id="4_kqmes"]
 [ext_resource type="Script" path="res://Scenes/TriangleLightup.gd" id="5_esw77"]
 [ext_resource type="Script" path="res://Scenes/Pushable.gd" id="6_e2pqn"]
-[ext_resource type="Texture2D" uid="uid://bvnqebvg6am54" path="res://Assets/runestone tiles.png" id="7_cpcsi"]
+[ext_resource type="Texture2D" uid="uid://bfsr4jwpamdpj" path="res://Assets/runestone tiles.png" id="7_cpcsi"]
+[ext_resource type="Texture2D" uid="uid://bpu5kk765x6ag" path="res://Assets/runestone tiles glowing.png" id="7_dv0k6"]
 [ext_resource type="Script" path="res://Classes/interactable.gd" id="8_00k53"]
 [ext_resource type="Script" path="res://Classes/dialogue_trigger.gd" id="9_3gpg5"]
+[ext_resource type="Script" path="res://Scenes/AnimationPlayer.gd" id="9_uprdl"]
 [ext_resource type="PackedScene" uid="uid://d3m5f6vbl0jsk" path="res://Scenes/beast_trap.tscn" id="10_5i4ap"]
 [ext_resource type="Script" path="res://Classes/dialogue_resource.gd" id="10_f0r46"]
 [ext_resource type="TileSet" uid="uid://c4ocbxrne5nh" path="res://Resources/foliage_tileset.tres" id="12_sg8nj"]
@@ -18,10 +20,51 @@
 atlas = ExtResource("7_cpcsi")
 region = Rect2(0, 0, 16, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_spqp4"]
+atlas = ExtResource("7_dv0k6")
+region = Rect2(0, 0, 16, 32)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28seo"]
 size = Vector2(14, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g26k2"]
+
+[sub_resource type="Animation" id="Animation_vbjg1"]
+resource_name = "glow"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ogl6k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cj3ww"]
+_data = {
+"RESET": SubResource("Animation_ogl6k"),
+"glow": SubResource("Animation_vbjg1")
+}
 
 [sub_resource type="Resource" id="Resource_g38tn"]
 script = ExtResource("10_f0r46")
@@ -36,7 +79,7 @@ pause_time = 1.0
 [node name="Level" type="Node2D" node_paths=PackedStringArray("spawn_points")]
 y_sort_enabled = true
 script = ExtResource("1_wh7oy")
-spawn_points = [NodePath("Spawn")]
+spawn_points = [NodePath("Spawn"), NodePath("Spawn Point")]
 
 [node name="Spawn" type="Node2D" parent="."]
 position = Vector2(238, 266)
@@ -76,6 +119,11 @@ script = ExtResource("6_e2pqn")
 texture = SubResource("AtlasTexture_j5w1o")
 offset = Vector2(0, -15.715)
 
+[node name="Sprite2D2" type="Sprite2D" parent="Rune"]
+modulate = Color(1, 1, 1, 0)
+texture = SubResource("AtlasTexture_spqp4")
+offset = Vector2(0, -15.715)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rune"]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_28seo")
@@ -86,6 +134,12 @@ script = ExtResource("8_00k53")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rune/Interactable"]
 shape = SubResource("RectangleShape2D_g26k2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Rune"]
+libraries = {
+"": SubResource("AnimationLibrary_cj3ww")
+}
+script = ExtResource("9_uprdl")
 
 [node name="DialogueTrigger" type="Area2D" parent="."]
 position = Vector2(280, 230)
@@ -157,6 +211,10 @@ layer_4/name = "Trees"
 layer_4/y_sort_enabled = true
 layer_4/tile_data = PackedInt32Array(1179653, 4, 0, 1441797, 4, 8, 720903, 4, 0, 1048583, 4, 0, 1572871, 4, 0, 786440, 4, 14, 1179656, 4, 8, 1966088, 4, 0, 720905, 4, 0, 1441801, 4, 8, 655370, 4, 14, 1835018, 4, 8, 1703947, 4, 0, 2097163, 4, 8, 720908, 4, 8, 1769485, 4, 14, 1835021, 4, 8, 655374, 4, 0, 1703950, 4, 8, 786447, 4, 8, 1900559, 4, 8, 1835024, 4, 0, 2162704, 4, 0, 458769, 4, 14, 655377, 4, 8, 1900562, 4, 8, 786451, 4, 0, 2097171, 4, 8, 1900564, 4, 14, 2162708, 4, 8, 655381, 4, 14, 655382, 4, 8, 786454, 4, 0, 851990, 4, 14, 983062, 4, 8, 1966103, 4, 8, 2162711, 4, 8, 983064, 4, 14, 2228249, 4, 8, 851994, 4, 0, 2359322, 4, 0, 589851, 4, 0, 1179675, 4, 14, 720924, 4, 8, 917532, 4, 14, 2162716, 4, 14, 2228252, 4, 8, 786461, 4, 8, 524318, 4, 8, 917534, 4, 8, 1966110, 4, 8, 2097182, 4, 8, 851999, 4, 8, 2228255, 4, 8, 589856, 4, 8, 2293792, 4, 14, 983073, 4, 0, 2031649, 4, 8, 2228257, 4, 0, 589858, 4, 0, 852003, 4, 14, 2293795, 4, 14, 786468, 4, 8, 2162724, 4, 14, 655397, 4, 8, 1966117, 4, 8, 2359333, 4, 0, 655398, 4, 14, 720934, 4, 14, 1114150, 4, 0, 2752550, 4, 0, 2359335, 4, 14, 917544, 4, 8, 1048616, 4, 14, 655401, 4, 0, 2228265, 4, 8, 2424873, 4, 0, 2621482, 4, 0, 852011, 4, 14, 983083, 4, 8, 786476, 4, 0, 2293804, 4, 14, 2490413, 4, 8, 786478, 4, 14, 1114158, 4, 0, 2293806, 4, 14, 852015, 4, 14, 655408, 4, 0, 983088, 4, 8, 2621488, 4, 0, 2293809, 4, 14, 1048626, 4, 0, 2621490, 4, 8, 1048627, 4, 14, 2490419, 4, 14, 3014707, 4, 0, 852020, 4, 0, 2621492, 4, 8, 983093, 4, 14, 1245237, 4, 8, 2752565, 4, 0, 1638454, 4, 14, 2621494, 4, 8, 852023, 4, 8, 983095, 4, 8, 2818103, 4, 8, 786488, 4, 0, 1310776, 4, 0, 917561, 4, 14, 2490425, 4, 14, 2752569, 4, 14, 983099, 4, 14, 1245243, 4, 8, 2687035, 4, 14, 2752571, 4, 0, 852028, 4, 0, 1114172, 4, 8, 1769532, 4, 14, 2490428, 4, 14, 2555964, 4, 8, 2818110, 4, 0, 720959, 4, 8, 917567, 4, 8, 1310783, 4, 0, 2555967, 4, 14, 2752576, 4, 0, 2883648, 4, 8, 720961, 4, 14, 1048641, 4, 14, 2883650, 4, 0, 655427, 4, 0, 1048643, 4, 0, 655428, 4, 14, 983108, 4, 14, 524357, 4, 8, 2949189, 4, 0, 655430, 4, 14, 786502, 4, 0, 1179718, 4, 14, 2883655, 4, 8, 3080263, 4, 0, 655432, 4, 0, 786504, 4, 8, 1835080, 4, 14, 720969, 4, 8, 2949193, 4, 8, 2752587, 4, 8, 2883659, 4, 0, 720973, 4, 8, 786509, 4, 14, 2818125, 4, 14, 2949197, 4, 0, 2752590, 4, 8, 720975, 4, 0, 2883663, 4, 8, 589904, 4, 0, 2687056, 4, 8, 720977, 4, 14, 852049, 4, 0, 2621521, 4, 14, 2949201, 4, 0, 655442, 4, 8, 2621523, 4, 8, 2752595, 4, 8, 589908, 4, 8, 1048660, 4, 0, 786517, 4, 14, 2490453, 4, 8, 589910, 4, 8, 655446, 4, 14, 1048662, 4, 8, 1310806, 4, 14, 2687062, 4, 0, 1376343, 4, 14, 1048664, 4, 0, 1245272, 4, 8, 1376344, 4, 8, 2490456, 4, 0, 852057, 4, 0, 1704025, 4, 8, 2293849, 4, 8, 1769562, 4, 14, 2162778, 4, 8, 2359386, 4, 8, 1179739, 4, 0, 1441883, 4, 0, 1704027, 4, 0, 2097243, 4, 0, 2752603, 4, 0, 1704028, 4, 8, 2162780, 4, 14, 983133, 4, 8, 2490461, 4, 0, 1310814, 4, 8, 1769566, 4, 0, 1966174, 4, 8, 393288, 4, 0, 327766, 4, 0, 82, 4, 0, 262226, 4, 0, -130995, 4, 0, -130999, 4, 0, 65611, 4, 0, 79, 4, 0, 196682, 4, 0, 131151, 4, 8, 65613, 4, 8, 131148, 4, 8, 262214, 4, 8, 262211, 4, 8, 393281, 4, 8, 327748, 4, 8, 71, 4, 8, 65606, 4, 8, 327759, 4, 14, 262218, 4, 14, 196685, 4, 14, 786436, 4, 0, 262150, 4, 0, 393227, 4, 0, 327688, 4, 0, 393219, 4, 0, 1048578, 4, 0, 327701, 4, 0, 393240, 4, 0, 589875, 4, 0, 524343, 4, 0, 524349, 4, 0, 524347, 4, 0, 524376, 4, 0, 852059, 4, 0, 2293854, 4, 0, 2883672, 4, 0, 2883669, 4, 0, 3145803, 4, 0, 3145808, 4, 0, 3014739, 4, 0, 3080259, 4, 0, 3080254, 4, 0, 2883642, 4, 0, 3014710, 4, 0, 3080250, 4, 0, 2687020, 4, 0, 2752559, 4, 0, 2949167, 4, 0, 2752553, 4, 0, 2490402, 4, 0, 2424862, 4, 0, 2555941, 4, 0, 2424851, 4, 0, 2293782, 4, 0, 2490392, 4, 0, 2621469, 4, 0, 2621473, 4, 0, 2162701, 4, 0, 2359312, 4, 0, 1769476, 4, 0, 1310722, 4, 0, 1441794, 4, 0, 1703938, 4, 0, 917540, 4, 14, 917538, 4, 14, 458764, 4, 8, 327695, 4, 8, 327699, 4, 8, 1769478, 4, 8, 2555930, 4, 8, 2424854, 4, 8, 2687011, 4, 8, 2687032, 4, 8, 3014721, 4, 8, 3080265, 4, 8, 3080261, 4, 8, 3276867, 4, 0, 3342408, 4, 0, 3080256, 4, 0, 2687069, 4, 8, 2490464, 4, 8, 2490458, 4, 8, 2162784, 4, 8, 2424926, 4, 8, 1835104, 4, 8, 2031712, 4, 14, 1507424, 4, 0, 1179743, 4, 0, 655450, 4, 8, 85, 4, 8)
 
+[node name="Spawn Point" type="Node2D" parent="."]
+position = Vector2(1207, 264)
+
 [connection signal="_highlight" from="WarpPoint" to="WarpPoint/Polygon2D2" method="onoff"]
+[connection signal="_highlight" from="Rune/Interactable" to="Rune/AnimationPlayer" method="glow"]
 [connection signal="interacted" from="Rune/Interactable" to="Rune" method="pushed"]
 [connection signal="_highlight" from="WarpPoint3" to="WarpPoint3/Polygon2D2" method="onoff"]

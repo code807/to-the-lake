@@ -28,11 +28,12 @@ func _process(delta):
 		for item in interactables:
 			var item_distance = global_position.distance_to(item.global_position)
 			if item_distance < closest_distance:
-				if closest != null:
-					closest.highlight = false
-				closest = item
-				closest_distance = item_distance
-				closest.highlight = true
+				if closest != item:
+					if closest != null:
+						closest.highlight = false
+					closest = item
+					closest_distance = item_distance
+					closest.highlight = true
 
 
 func _physics_process(delta):
