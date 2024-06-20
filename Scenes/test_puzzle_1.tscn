@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Classes/warp_point.gd" id="4_kqmes"]
 [ext_resource type="Script" path="res://Scenes/TriangleLightup.gd" id="5_esw77"]
 [ext_resource type="Script" path="res://Scenes/Pushable.gd" id="6_e2pqn"]
-[ext_resource type="Texture2D" uid="uid://bfsr4jwpamdpj" path="res://Assets/runestone tiles.png" id="7_cpcsi"]
+[ext_resource type="Texture2D" uid="uid://bvnqebvg6am54" path="res://Assets/runestone tiles.png" id="7_cpcsi"]
 [ext_resource type="Script" path="res://Classes/interactable.gd" id="8_00k53"]
 [ext_resource type="Script" path="res://Classes/dialogue_trigger.gd" id="9_3gpg5"]
 [ext_resource type="PackedScene" uid="uid://d3m5f6vbl0jsk" path="res://Scenes/beast_trap.tscn" id="10_5i4ap"]
@@ -66,10 +66,10 @@ script = ExtResource("5_esw77")
 [node name="Spawn 1" type="Node2D" parent="WarpPoint"]
 
 [node name="Rune" type="RigidBody2D" parent="."]
-position = Vector2(1275, 362)
+position = Vector2(1207, 253)
 gravity_scale = 0.0
 lock_rotation = true
-linear_damp = 3.0
+linear_damp = 5.0
 script = ExtResource("6_e2pqn")
 
 [node name="Sprite2D" type="Sprite2D" parent="Rune"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3m5f6vbl0jsk"]
+[gd_scene load_steps=10 format=3 uid="uid://d3m5f6vbl0jsk"]
 
 [ext_resource type="Script" path="res://Scripts/beast_trap.gd" id="1_1j35a"]
 [ext_resource type="Texture2D" uid="uid://bbamu0bmow0n6" path="res://Assets/beast trap tile.png" id="2_3oeh0"]
 [ext_resource type="Script" path="res://Classes/talkable.gd" id="2_a1vhk"]
 [ext_resource type="Script" path="res://Classes/dialogue_resource.gd" id="3_6t44o"]
+[ext_resource type="Script" path="res://Classes/PersistentDatum.gd" id="5_3qfxh"]
 
 [sub_resource type="Resource" id="Resource_gsi4c"]
 script = ExtResource("3_6t44o")
@@ -14,6 +15,7 @@ wait_time = 5.0
 pause_time = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c2row"]
+resource_local_to_scene = true
 atlas = ExtResource("2_3oeh0")
 region = Rect2(0, 0, 16, 16)
 
@@ -46,4 +48,8 @@ collision_layer = 2
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_83l38")
 
+[node name="PersistentDatum" type="Node" parent="."]
+script = ExtResource("5_3qfxh")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="setflag" from="PersistentDatum" to="." method="_on_set_flag"]

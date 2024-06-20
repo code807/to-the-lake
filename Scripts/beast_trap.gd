@@ -7,13 +7,19 @@ extends Area2D
 var closed := false:
 	set = _set_closed
 
-func _set_closed(value):
-		if value:
-			sprite.texture.region.position.x = 16
-			static_body.process_mode = Node.PROCESS_MODE_DISABLED
+
+func _set_closed(is_closed: bool):
+	sprite.texture.region.position.x = 16 if is_closed else 0
+	static_body.process_mode = Node.PROCESS_MODE_DISABLED if is_closed \
+			else Node.PROCESS_MODE_INHERIT
+
+
+func _on_set_flag(id: int, flag_state: bool):
+	closed = flag_state
 
 
 func _on_body_entered(body):
 	if body is Pushable:
 		talkable.dialogue_trigger.emit(talkable.dialogue)
 		closed = true
+		$PersistentDatum.state = true

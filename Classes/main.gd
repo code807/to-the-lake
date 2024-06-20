@@ -49,6 +49,7 @@ func load_level(level_name: String, spawn_index: int = 0):
 
 
 func _set_flag(id: int, value: bool):
+	print(flags)
 	if not value:
 		if lname in flags:
 			if id in flags[lname]:
