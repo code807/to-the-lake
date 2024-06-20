@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Classes/warp_point.gd" id="4_kqmes"]
 [ext_resource type="Script" path="res://Scenes/TriangleLightup.gd" id="5_esw77"]
 [ext_resource type="Script" path="res://Scenes/Pushable.gd" id="6_e2pqn"]
-[ext_resource type="Texture2D" uid="uid://bvnqebvg6am54" path="res://Assets/runestone tiles.png" id="7_cpcsi"]
+[ext_resource type="Texture2D" uid="uid://bfsr4jwpamdpj" path="res://Assets/runestone tiles.png" id="7_cpcsi"]
 [ext_resource type="Script" path="res://Classes/interactable.gd" id="8_00k53"]
 [ext_resource type="Script" path="res://Classes/dialogue_trigger.gd" id="9_3gpg5"]
 [ext_resource type="PackedScene" uid="uid://d3m5f6vbl0jsk" path="res://Scenes/beast_trap.tscn" id="10_5i4ap"]

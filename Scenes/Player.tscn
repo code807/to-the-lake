@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://cw6m8by2uvbo6"]
+[gd_scene load_steps=31 format=3 uid="uid://f0fvbr7oe4sb"]
 
 [ext_resource type="Script" path="res://Classes/Player.gd" id="1_3h3rd"]
 [ext_resource type="Texture2D" uid="uid://8r5d2l2h7ni6" path="res://Assets/wanderer sprite.png" id="2_qj31c"]
+[ext_resource type="Script" path="res://Classes/PersistentDatum.gd" id="3_26yx4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6fjtv"]
 radius = 5.0
@@ -228,6 +229,9 @@ scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_yb2go")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PersistentDatum" type="Node" parent="."]
+script = ExtResource("3_26yx4")
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_checkanim"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -67,8 +67,9 @@ func _on_area_2d_area_entered(area):
 	elif area is DialogueTrigger:
 		dialogue_trigger.emit(area.dialogue)
 		if area.oneoff == true:
-			emit_signal("one_off", area.id)
-			area.queue_free()
+			# emit_signal("one_off", area.id)
+			area.flag.state = true
+			# area.queue_free()
 
 
 func _on_area_2d_area_exited(area):
