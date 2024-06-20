@@ -43,6 +43,8 @@ func load_level(level_name: String, spawn_index: int = 0):
 				if lname in oneoffs:
 					if oneoff.id in oneoffs[lname]:
 						oneoff.queue_free()
+		for talkable in get_tree().get_nodes_in_group("talkable"):
+			talkable.dialogue_trigger.connect(dialogue_manager._on_dialogue_trigger)
 		if level.spawn_points.size() > spawn_index:
 			spawn = level.spawn_points[spawn_index].global_position
 		else:

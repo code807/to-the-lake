@@ -1,16 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://c064kg605cttw"]
+[gd_scene load_steps=18 format=3 uid="uid://c064kg605cttw"]
 
 [ext_resource type="TileSet" uid="uid://bu1pmm8hkbq5q" path="res://Resources/Grass Tileset.tres" id="1_eqg1j"]
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_wh7oy"]
 [ext_resource type="Script" path="res://Classes/warp_point.gd" id="4_kqmes"]
 [ext_resource type="Script" path="res://Scenes/TriangleLightup.gd" id="5_esw77"]
 [ext_resource type="Script" path="res://Scenes/Pushable.gd" id="6_e2pqn"]
-[ext_resource type="Texture2D" uid="uid://bfsr4jwpamdpj" path="res://Assets/runestone tiles.png" id="7_cpcsi"]
+[ext_resource type="Texture2D" uid="uid://bvnqebvg6am54" path="res://Assets/runestone tiles.png" id="7_cpcsi"]
 [ext_resource type="Script" path="res://Classes/interactable.gd" id="8_00k53"]
 [ext_resource type="Script" path="res://Classes/dialogue_trigger.gd" id="9_3gpg5"]
+[ext_resource type="PackedScene" uid="uid://d3m5f6vbl0jsk" path="res://Scenes/beast_trap.tscn" id="10_5i4ap"]
 [ext_resource type="Script" path="res://Classes/dialogue_resource.gd" id="10_f0r46"]
-[ext_resource type="Script" path="res://Scripts/beast_trap.gd" id="11_61mdj"]
-[ext_resource type="Texture2D" uid="uid://bbamu0bmow0n6" path="res://Assets/beast trap tile.png" id="12_fl0dl"]
 [ext_resource type="TileSet" uid="uid://c4ocbxrne5nh" path="res://Resources/foliage_tileset.tres" id="12_sg8nj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_78pgg"]
@@ -33,16 +32,6 @@ wait_time = 0.0
 pause_time = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2w055"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c2row"]
-atlas = ExtResource("12_fl0dl")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fh1tx"]
-size = Vector2(16, 6.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_83l38"]
-size = Vector2(20, 10)
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("spawn_points")]
 y_sort_enabled = true
@@ -146,25 +135,8 @@ vertical_alignment = 1
 
 [node name="Spawn 1" type="Node2D" parent="WarpPoint3"]
 
-[node name="BeastTrap" type="Area2D" parent="."]
-position = Vector2(1207, 185)
-script = ExtResource("11_61mdj")
-
-[node name="Sprite2D" type="Sprite2D" parent="BeastTrap"]
-texture = SubResource("AtlasTexture_c2row")
-offset = Vector2(0, -3.395)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BeastTrap"]
-position = Vector2(0, 1.25)
-shape = SubResource("RectangleShape2D_fh1tx")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="BeastTrap"]
-position = Vector2(0, -3)
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BeastTrap/StaticBody2D"]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_83l38")
+[node name="BeastTrap" parent="." instance=ExtResource("10_5i4ap")]
+position = Vector2(1206, 190)
 
 [node name="Vegetation" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -187,4 +159,3 @@ layer_4/tile_data = PackedInt32Array(1179653, 4, 0, 1441797, 4, 8, 720903, 4, 0,
 [connection signal="_highlight" from="WarpPoint" to="WarpPoint/Polygon2D2" method="onoff"]
 [connection signal="interacted" from="Rune/Interactable" to="Rune" method="pushed"]
 [connection signal="_highlight" from="WarpPoint3" to="WarpPoint3/Polygon2D2" method="onoff"]
-[connection signal="body_entered" from="BeastTrap" to="BeastTrap" method="_on_body_entered"]

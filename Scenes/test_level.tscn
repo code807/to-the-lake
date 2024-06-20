@@ -98,10 +98,14 @@ position = Vector2(98, 220)
 position = Vector2(96, 229)
 
 [node name="DialogueTrigger" parent="." instance=ExtResource("6_3mfwy")]
+rotation = -0.835774
+scale = Vector2(0.997389, 7.50024)
 dialogue = Array[ExtResource("7_11y7w")]([SubResource("Resource_kwkon"), SubResource("Resource_73d8g"), SubResource("Resource_r1w0o"), SubResource("Resource_xpo6e")])
 
 [node name="DialogueTrigger2" parent="." instance=ExtResource("6_3mfwy")]
 position = Vector2(55, 279)
+rotation = -0.766483
+scale = Vector2(1, 8.91036)
 dialogue = Array[ExtResource("7_11y7w")]([SubResource("Resource_3k8v1")])
 
 [node name="WarpPoint" type="Area2D" parent="."]

@@ -4,11 +4,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcjtl"]
 
-[node name="Area2D" type="Area2D"]
+[node name="DialogueTrigger" type="Area2D"]
 position = Vector2(133, 216)
-rotation = -0.649575
 script = ExtResource("1_ge51d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.085, 6.745)
 shape = SubResource("RectangleShape2D_fcjtl")
