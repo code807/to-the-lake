@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://c064kg605cttw"]
+[gd_scene load_steps=38 format=3 uid="uid://c064kg605cttw"]
 
 [ext_resource type="TileSet" uid="uid://bu1pmm8hkbq5q" path="res://Resources/Grass Tileset.tres" id="1_eqg1j"]
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_wh7oy"]
@@ -9,9 +9,9 @@
 [ext_resource type="Script" path="res://Classes/interactable.gd" id="8_00k53"]
 [ext_resource type="Script" path="res://Classes/dialogue_trigger.gd" id="9_3gpg5"]
 [ext_resource type="Script" path="res://Classes/dialogue_resource.gd" id="10_f0r46"]
-[ext_resource type="Script" path="res://Scripts/beast_trap.gd" id="11_61mdj"]
+[ext_resource type="PackedScene" uid="uid://uv3xjcj7iouv" path="res://Scenes/dialogue_trigger.tscn" id="10_hffwy"]
+[ext_resource type="PackedScene" uid="uid://d3m5f6vbl0jsk" path="res://Scenes/beast_trap.tscn" id="11_6207g"]
 [ext_resource type="Texture2D" uid="uid://db8ptb8mx0j5u" path="res://Assets/twigs tiles.png" id="12_3brks"]
-[ext_resource type="Texture2D" uid="uid://bbamu0bmow0n6" path="res://Assets/beast trap tile.png" id="12_fl0dl"]
 [ext_resource type="Texture2D" uid="uid://b6386lvannw0d" path="res://Assets/foliage_tiles.png" id="12_su3r5"]
 [ext_resource type="PackedScene" uid="uid://b7f4s2v60qphi" path="res://Scenes/big_tree.tscn" id="13_glm6r"]
 [ext_resource type="Texture2D" uid="uid://d4kx0v3788kys" path="res://Assets/rock tiles.png" id="13_lxe5x"]
@@ -41,15 +41,21 @@ pause_time = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2w055"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c2row"]
-atlas = ExtResource("12_fl0dl")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="Resource" id="Resource_7lxtk"]
+script = ExtResource("10_f0r46")
+story_teller = 0
+dialogue = "There was a beast trap blocking the path!"
+speech_time = 3.0
+wait_time = 5.0
+pause_time = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fh1tx"]
-size = Vector2(16, 6.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_83l38"]
-size = Vector2(20, 10)
+[sub_resource type="Resource" id="Resource_6l4tb"]
+script = ExtResource("10_f0r46")
+story_teller = 2
+dialogue = "What did they do about it?"
+speech_time = 2.0
+wait_time = 4.0
+pause_time = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fm4uk"]
 texture = ExtResource("12_su3r5")
@@ -94,10 +100,13 @@ texture = ExtResource("12_su3r5")
 texture = ExtResource("13_tk6ci")
 0:0/size_in_atlas = Vector2i(3, 3)
 0:0/0 = 0
+0:0/0/y_sort_origin = 5
 0:3/size_in_atlas = Vector2i(3, 3)
 0:3/0 = 0
+0:3/0/y_sort_origin = 5
 0:6/size_in_atlas = Vector2i(3, 3)
 0:6/0 = 0
+0:6/0/y_sort_origin = 5
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qu4h"]
 texture = ExtResource("12_3brks")
@@ -354,25 +363,14 @@ vertical_alignment = 1
 
 [node name="Spawn 1" type="Node2D" parent="WarpPoint3"]
 
-[node name="BeastTrap" type="Area2D" parent="."]
-position = Vector2(1207, 185)
-script = ExtResource("11_61mdj")
+[node name="DialogueTrigger3" parent="." instance=ExtResource("10_hffwy")]
+position = Vector2(1203, 194)
+scale = Vector2(3.39998, 1)
+oneoff = false
+dialogue = Array[ExtResource("10_f0r46")]([SubResource("Resource_7lxtk"), SubResource("Resource_6l4tb")])
 
-[node name="Sprite2D" type="Sprite2D" parent="BeastTrap"]
-texture = SubResource("AtlasTexture_c2row")
-offset = Vector2(0, -3.395)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BeastTrap"]
-position = Vector2(0, 1.25)
-shape = SubResource("RectangleShape2D_fh1tx")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="BeastTrap"]
-position = Vector2(0, -3)
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BeastTrap/StaticBody2D"]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_83l38")
+[node name="BeastTrap" parent="." instance=ExtResource("11_6207g")]
+position = Vector2(1208, 184)
 
 [node name="Vegetation" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -389,4 +387,3 @@ layer_3/tile_data = PackedInt32Array(1441815, 1, 6, 983059, 1, 3, 1179671, 1, 3,
 [connection signal="_highlight" from="WarpPoint" to="WarpPoint/Polygon2D2" method="onoff"]
 [connection signal="interacted" from="Rune/Interactable" to="Rune" method="pushed"]
 [connection signal="_highlight" from="WarpPoint3" to="WarpPoint3/Polygon2D2" method="onoff"]
-[connection signal="body_entered" from="BeastTrap" to="BeastTrap" method="_on_body_entered"]
