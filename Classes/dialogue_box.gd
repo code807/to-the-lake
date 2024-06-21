@@ -16,7 +16,15 @@ func _ready():
 
 func play_dialogue(dialogue: String, speech_time: float, pause_time: float):
 	print("Dialog box is playing " + dialogue + " for time " + str(speech_time))
-	label.text = ""
+	match storyteller:
+		StoryTellers.names.JERA:
+			label.text = "[color=#2482be]Jera[/color]\n"
+		StoryTellers.names.DOVE:
+			label.text = "[right][color=#9f24be]Dove[/color]\n[right]"
+		StoryTellers.names.CHARLIE:
+			label.text = "[right][color=#e69127]Charlie[/color]\n[right]"
+		StoryTellers.names.JAK:
+			label.text = "[color=#fd8d00]Jak[/color]\n"
 	string = dialogue
 	label.visible = true
 	timer.start(speech_time+pause_time)
@@ -38,11 +46,12 @@ func _on_finished():
 	label.size.y = label.get_content_height()
 	match(storyteller):
 		StoryTellers.names.JERA:
-			label.set_position(Vector2(6,6))
+			label.set_position(Vector2(5,2))
 		StoryTellers.names.DOVE:
-			label.set_position(Vector2(size.x-label.size.x-6,6))
+			label.set_position(Vector2(size.x-label.size.x-5,2))
 		StoryTellers.names.CHARLIE:
-			label.set_position(Vector2(size.x-label.size.x-6, size.y-label.size.y-12))
+			label.set_position(Vector2(size.x-label.size.x-5, size.y-label.size.y-5))
 		StoryTellers.names.JAK:
-			label.set_position(Vector2(6, size.y-label.size.y-12))
+			label.set_position(Vector2(5, size.y-label.size.y-5))
+
 	
