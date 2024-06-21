@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyr0sw47xyunp"]
 
 [ext_resource type="Script" path="res://Classes/dialogue_box.gd" id="1_6ikvb"]
-[ext_resource type="Texture2D" uid="uid://bp6c0h80wd30k" path="res://Assets/dialogueninepatch.png" id="1_euc8w"]
-[ext_resource type="FontFile" uid="uid://bmo4kus8ha582" path="res://Assets/m6x11.ttf" id="2_lxilw"]
+[ext_resource type="FontFile" uid="uid://s0k0m458lp0h" path="res://Assets/m5x7.ttf" id="2_8egyw"]
+[ext_resource type="Texture2D" uid="uid://c6hurh1ckknqj" path="res://Assets/transparent border.png" id="3_3hi3h"]
 
 [node name="DialogueBox" type="Control"]
 layout_mode = 3
@@ -21,22 +21,24 @@ offset_left = 6.0
 offset_top = 6.0
 offset_right = 134.0
 offset_bottom = 66.0
-theme_override_fonts/normal_font = ExtResource("2_lxilw")
+theme_override_constants/line_separation = -2
+theme_override_fonts/normal_font = ExtResource("2_8egyw")
 theme_override_font_sizes/normal_font_size = 16
-text = "Using this dumb label instead"
+bbcode_enabled = true
+text = "[color=#fd8d00]Jak[/color]
+Using this dumb label instead"
 scroll_active = false
 shortcut_keys_enabled = false
 
 [node name="Control" type="Control" parent="RichTextLabel"]
 show_behind_parent = true
 layout_mode = 1
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -6.0
-offset_top = -6.0
-offset_right = 6.0
-offset_bottom = 12.0
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -47,11 +49,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_euc8w")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 12
+texture = ExtResource("3_3hi3h")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
