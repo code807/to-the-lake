@@ -3,11 +3,12 @@ class_name DialogueManager extends Control
 @onready var timer = $Timer
 
 @onready var dialogue_box_dict = {
+	StoryTellers.names.JERA: $Jera,
+	StoryTellers.names.DOVE: $Dove,
 	StoryTellers.names.CHARLIE: $Charlie,
-	StoryTellers.names.TAYLOR: $Taylor,
-	StoryTellers.names.JEFF: $Jeff,
-	StoryTellers.names.CHRIS: $Chris
+	StoryTellers.names.JAK: $Jak
 }
+
 var dialogue_queue = []
 
 func _on_dialogue_trigger(dialogues: Array[DialogResource]):
