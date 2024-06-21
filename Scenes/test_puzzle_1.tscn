@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c064kg605cttw"]
+[gd_scene load_steps=26 format=3 uid="uid://c064kg605cttw"]
 
 [ext_resource type="TileSet" uid="uid://bu1pmm8hkbq5q" path="res://Resources/Grass Tileset.tres" id="1_eqg1j"]
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_wh7oy"]
@@ -65,6 +65,22 @@ _data = {
 "RESET": SubResource("Animation_ogl6k"),
 "glow": SubResource("Animation_vbjg1")
 }
+
+[sub_resource type="Resource" id="Resource_mfd1k"]
+script = ExtResource("10_f0r46")
+story_teller = 3
+dialogue = "He was some trapper or hunter, and he lived in a dump"
+speech_time = 3.0
+wait_time = 4.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_xt6bv"]
+script = ExtResource("10_f0r46")
+story_teller = 1
+dialogue = "It wasn't a dump"
+speech_time = 2.0
+wait_time = 3.0
+pause_time = 1.0
 
 [sub_resource type="Resource" id="Resource_g38tn"]
 script = ExtResource("10_f0r46")
@@ -144,7 +160,7 @@ script = ExtResource("9_uprdl")
 [node name="DialogueTrigger" type="Area2D" parent="."]
 position = Vector2(280, 230)
 script = ExtResource("9_3gpg5")
-dialogue = Array[ExtResource("10_f0r46")]([SubResource("Resource_g38tn")])
+dialogue = Array[ExtResource("10_f0r46")]([SubResource("Resource_mfd1k"), SubResource("Resource_xt6bv")])
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DialogueTrigger"]
 polygon = PackedVector2Array(-5, -10, 6, -11, 12, -5, 13, 4, 6, 11, -6, 11, -12, 3, -9, -5)

@@ -69,7 +69,7 @@ vertical_alignment = 1
 [node name="WarpPoint5" type="Area2D" parent="."]
 position = Vector2(79, -33)
 script = ExtResource("2_o1uxk")
-destination = "test_puzzle_2"
+destination = "intro_level"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WarpPoint5"]
 shape = SubResource("CircleShape2D_ujsl1")
@@ -86,7 +86,7 @@ offset_top = -11.0
 offset_right = 37.0
 offset_bottom = 12.0
 theme_override_font_sizes/font_size = 13
-text = "Test Puzzle 2"
+text = "Intro Level"
 horizontal_alignment = 1
 vertical_alignment = 1
 

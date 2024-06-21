@@ -9,7 +9,7 @@ const levels := {
 	"test_level": preload("res://Scenes/test_level.tscn"),
 	"test_level_1": preload("res://Scenes/test_level_1.tscn"),
 	"test_puzzle_1": preload("res://Scenes/test_puzzle_1.tscn"),
-	"test_puzzle_2": preload("res://Scenes/test_puzzle_2.tscn"),
+	"intro_level": preload("res://Scenes/intro_level.tscn"),
 	"hub": preload("res://Scenes/hub_level.tscn")
 }
 var level:Level

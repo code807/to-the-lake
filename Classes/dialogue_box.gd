@@ -37,12 +37,12 @@ func _on_timer_timeout():
 func _on_finished():
 	label.size.y = label.get_content_height()
 	match(storyteller):
-		StoryTellers.names.CHARLIE:
+		StoryTellers.names.JERA:
 			label.set_position(Vector2(6,6))
-		StoryTellers.names.TAYLOR:
+		StoryTellers.names.DOVE:
 			label.set_position(Vector2(size.x-label.size.x-6,6))
-		StoryTellers.names.JEFF:
+		StoryTellers.names.CHARLIE:
 			label.set_position(Vector2(size.x-label.size.x-6, size.y-label.size.y-12))
-		StoryTellers.names.CHRIS:
+		StoryTellers.names.JAK:
 			label.set_position(Vector2(6, size.y-label.size.y-12))
 	
