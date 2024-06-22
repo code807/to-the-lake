@@ -5,13 +5,14 @@
 [ext_resource type="Script" path="res://Classes/warp_point.gd" id="4_kqmes"]
 [ext_resource type="Script" path="res://Scenes/TriangleLightup.gd" id="5_esw77"]
 [ext_resource type="Script" path="res://Scenes/Pushable.gd" id="6_e2pqn"]
-[ext_resource type="Texture2D" uid="uid://bfsr4jwpamdpj" path="res://Assets/runestone tiles.png" id="7_cpcsi"]
+[ext_resource type="Texture2D" uid="uid://bvnqebvg6am54" path="res://Assets/runestone tiles.png" id="7_cpcsi"]
 [ext_resource type="Texture2D" uid="uid://bpu5kk765x6ag" path="res://Assets/runestone tiles glowing.png" id="7_dv0k6"]
 [ext_resource type="Script" path="res://Classes/interactable.gd" id="8_00k53"]
 [ext_resource type="Script" path="res://Classes/dialogue_trigger.gd" id="9_3gpg5"]
 [ext_resource type="Script" path="res://Scenes/AnimationPlayer.gd" id="9_uprdl"]
 [ext_resource type="PackedScene" uid="uid://d3m5f6vbl0jsk" path="res://Scenes/beast_trap.tscn" id="10_5i4ap"]
 [ext_resource type="Script" path="res://Classes/dialogue_resource.gd" id="10_f0r46"]
+[ext_resource type="PackedScene" uid="uid://cnurjyedu7p2u" path="res://Scenes/warp_point.tscn" id="12_kg62a"]
 [ext_resource type="TileSet" uid="uid://c4ocbxrne5nh" path="res://Resources/foliage_tileset.tres" id="12_sg8nj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_78pgg"]
@@ -89,8 +90,6 @@ dialogue = "this also should only happen once"
 speech_time = 4.0
 wait_time = 0.0
 pause_time = 1.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_2w055"]
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("spawn_points")]
 y_sort_enabled = true
@@ -179,31 +178,8 @@ polygon = PackedVector2Array(-5, -10, 6, -11, 12, -5, 13, 4, 6, 11, -6, 11, -12,
 [node name="Polygon2D" type="Polygon2D" parent="DialogueTrigger2"]
 polygon = PackedVector2Array(-4, -10, 6, -11, 12, -5, 13, 4, 6, 11, -6, 11, -12, 3, -9, -6)
 
-[node name="WarpPoint3" type="Area2D" parent="."]
-position = Vector2(200, 308)
-script = ExtResource("4_kqmes")
-destination = "hub"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WarpPoint3"]
-shape = SubResource("CircleShape2D_2w055")
-
-[node name="Polygon2D2" type="Polygon2D" parent="WarpPoint3"]
-position = Vector2(-1, -1)
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(-13, 11, 0, -16, 15, 11)
-script = ExtResource("5_esw77")
-
-[node name="Label" type="Label" parent="WarpPoint3/Polygon2D2"]
-offset_left = -33.0
-offset_top = -11.0
-offset_right = 37.0
-offset_bottom = 12.0
-theme_override_font_sizes/font_size = 13
-text = "Hub"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Spawn 1" type="Node2D" parent="WarpPoint3"]
+[node name="WarpPoint4" parent="." instance=ExtResource("12_kg62a")]
+position = Vector2(201, 308)
 
 [node name="BeastTrap" parent="." instance=ExtResource("10_5i4ap")]
 position = Vector2(1206, 190)
@@ -230,7 +206,5 @@ layer_4/tile_data = PackedInt32Array(1179653, 4, 0, 1441797, 4, 8, 720903, 4, 0,
 [node name="Spawn Point" type="Node2D" parent="."]
 position = Vector2(1207, 264)
 
-[connection signal="_highlight" from="WarpPoint" to="WarpPoint/Polygon2D2" method="onoff"]
 [connection signal="_highlight" from="Rune/Interactable" to="Rune/AnimationPlayer" method="glow"]
 [connection signal="interacted" from="Rune/Interactable" to="Rune" method="pushed"]
-[connection signal="_highlight" from="WarpPoint3" to="WarpPoint3/Polygon2D2" method="onoff"]

@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/TriangleLightup.gd" id="4_ywnnf"]
 [ext_resource type="Texture2D" uid="uid://bmqdulhbd72kg" path="res://Assets/fire-sheet.png" id="6_es5py"]
 [ext_resource type="PackedScene" uid="uid://k4f3aijx4msb" path="res://Scenes/PuzzleTwoInteractable.tscn" id="7_2k3kx"]
-[ext_resource type="PackedScene" uid="uid://lyy8afkogvig" path="res://Scenes/particle_emitter.tscn" id="9_2abri"]
+[ext_resource type="PackedScene" path="res://Scenes/particle_emitter.tscn" id="9_2abri"]
 [ext_resource type="Script" path="res://Scenes/Memory Puzzle.gd" id="10_8a3h0"]
 [ext_resource type="Texture2D" uid="uid://beb0l0rcpbx6a" path="res://Assets/bowl.png" id="10_yxkop"]
 [ext_resource type="TileSet" uid="uid://c4ocbxrne5nh" path="res://Resources/foliage_tileset.tres" id="13_qkruj"]
@@ -17,19 +17,19 @@
 radius = 4.0
 height = 27.76
 
-[sub_resource type="Animation" id="Animation_8jmil"]
-resource_name = "red"
+[sub_resource type="Animation" id="Animation_gapp6"]
+resource_name = "DEFAULT"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Bowl:modulate")
-tracks/0/interp = 2
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(3, 1, 1, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_m21on"]
@@ -77,19 +77,19 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 3, 1, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_gapp6"]
-resource_name = "DEFAULT"
+[sub_resource type="Animation" id="Animation_8jmil"]
+resource_name = "red"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Bowl:modulate")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(3, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ucgd3"]
@@ -403,33 +403,6 @@ animations = [{
 radius = 2.0
 height = 44.0
 
-[sub_resource type="Animation" id="Animation_vymwq"]
-resource_name = "die"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.611765), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D/StaticBody2D/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, true]
-}
-
 [sub_resource type="Animation" id="Animation_qfbvx"]
 length = 0.001
 tracks/0/type = "value"
@@ -455,6 +428,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_vymwq"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.611765), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D/StaticBody2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vmq1m"]
@@ -585,6 +585,5 @@ libraries = {
 "": SubResource("AnimationLibrary_vmq1m")
 }
 
-[connection signal="_highlight" from="WarpPoint" to="WarpPoint/Polygon2D2" method="onoff"]
 [connection signal="interacted" from="Memory Puzzle" to="Memory Puzzle" method="startdemo"]
 [connection signal="animation_finished" from="Memory Puzzle/AnimationPlayer" to="Memory Puzzle" method="_nextinsequence"]

@@ -226,6 +226,3 @@ position = Vector2(638, 1102)
 rotation = 1.36267
 scale = Vector2(6.75094, 1)
 dialogue = Array[ExtResource("7_3dual")]([SubResource("Resource_yicua"), SubResource("Resource_gcly4"), SubResource("Resource_oi48i")])
-
-[connection signal="_highlight" from="WarpPoint" to="WarpPoint/Polygon2D2" method="onoff"]
-[connection signal="_highlight" from="WarpPoint3" to="WarpPoint3/Polygon2D2" method="onoff"]
