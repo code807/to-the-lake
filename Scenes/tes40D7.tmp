@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://dfjogou7hxrma"]
+[gd_scene load_steps=62 format=3 uid="uid://dfjogou7hxrma"]
 
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_ttwbp"]
 [ext_resource type="TileSet" uid="uid://bu1pmm8hkbq5q" path="res://Resources/Grass Tileset.tres" id="2_jiweg"]
@@ -12,97 +12,6 @@
 [ext_resource type="TileSet" uid="uid://c4ocbxrne5nh" path="res://Resources/foliage_tileset.tres" id="13_qkruj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_78pgg"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h3kvu"]
-radius = 4.0
-height = 27.76
-
-[sub_resource type="Animation" id="Animation_8jmil"]
-resource_name = "red"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bowl:modulate")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(3, 1, 1, 1), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_m21on"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bowl:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_2mkxj"]
-resource_name = "blue"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bowl:modulate")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 3, 1), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_otife"]
-resource_name = "green"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bowl:modulate")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 3, 1, 1), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_gapp6"]
-resource_name = "DEFAULT"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bowl:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ucgd3"]
-_data = {
-"DEFAULT": SubResource("Animation_gapp6"),
-"RESET": SubResource("Animation_m21on"),
-"blue": SubResource("Animation_2mkxj"),
-"green": SubResource("Animation_otife"),
-"red": SubResource("Animation_8jmil")
-}
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_5hxva"]
-radius = 15.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c8oet"]
 atlas = ExtResource("6_es5py")
@@ -399,69 +308,96 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_irywt"]
-radius = 2.0
-height = 44.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h3kvu"]
+radius = 4.0
+height = 27.76
 
-[sub_resource type="Animation" id="Animation_vymwq"]
-resource_name = "die"
+[sub_resource type="Animation" id="Animation_8jmil"]
+resource_name = "red"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:modulate")
-tracks/0/interp = 1
+tracks/0/path = NodePath("Bowl:modulate")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.611765), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D/StaticBody2D/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, true]
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(3, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_qfbvx"]
+[sub_resource type="Animation" id="Animation_m21on"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/path = NodePath("Bowl:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0.611765)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D/StaticBody2D/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_vmq1m"]
-_data = {
-"RESET": SubResource("Animation_qfbvx"),
-"die": SubResource("Animation_vymwq")
+[sub_resource type="Animation" id="Animation_2mkxj"]
+resource_name = "blue"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bowl:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 3, 1), Color(1, 1, 1, 1)]
 }
+
+[sub_resource type="Animation" id="Animation_otife"]
+resource_name = "green"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bowl:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 3, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gapp6"]
+resource_name = "DEFAULT"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bowl:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ucgd3"]
+_data = {
+"DEFAULT": SubResource("Animation_gapp6"),
+"RESET": SubResource("Animation_m21on"),
+"blue": SubResource("Animation_2mkxj"),
+"green": SubResource("Animation_otife"),
+"red": SubResource("Animation_8jmil")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5hxva"]
+radius = 15.0
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("spawn_points")]
 y_sort_enabled = true
@@ -520,6 +456,16 @@ layer_6/tile_data = PackedInt32Array(1900609, 5, 131072, 1507394, 5, 131072, 144
 [node name="Spawn Point" type="Node2D" parent="."]
 position = Vector2(1202, 652)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.611765)
+position = Vector2(1205, 202)
+sprite_frames = SubResource("SpriteFrames_ljwx7")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.345996
+speed_scale = 1.85
+offset = Vector2(0, -15)
+
 [node name="Particle Emitter" parent="." instance=ExtResource("9_2abri")]
 animation = &"1"
 frame = 10
@@ -529,7 +475,6 @@ frame_progress = 1.0
 position = Vector2(1202, 283)
 
 [node name="Memory Puzzle" type="Area2D" parent="."]
-y_sort_enabled = true
 script = ExtResource("10_8a3h0")
 
 [node name="Interactable" parent="Memory Puzzle" instance=ExtResource("7_2k3kx")]
@@ -542,6 +487,24 @@ color = 0
 
 [node name="Interactable3" parent="Memory Puzzle" instance=ExtResource("7_2k3kx")]
 position = Vector2(1066, 512)
+
+[node name="Interactable4" parent="Memory Puzzle" instance=ExtResource("7_2k3kx")]
+position = Vector2(1089, 404)
+
+[node name="Interactable5" parent="Memory Puzzle" instance=ExtResource("7_2k3kx")]
+position = Vector2(1208, 391)
+color = 0
+
+[node name="Interactable6" parent="Memory Puzzle" instance=ExtResource("7_2k3kx")]
+position = Vector2(1146, 446)
+color = 2
+
+[node name="Interactable7" parent="Memory Puzzle" instance=ExtResource("7_2k3kx")]
+position = Vector2(1137, 384)
+color = 0
+
+[node name="Interactable8" parent="Memory Puzzle" instance=ExtResource("7_2k3kx")]
+position = Vector2(1167, 410)
 
 [node name="Bowl" type="Sprite2D" parent="Memory Puzzle"]
 position = Vector2(1202, 279)
@@ -563,27 +526,6 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Memory Puzzle"]
 position = Vector2(1202, 279)
 shape = SubResource("CircleShape2D_5hxva")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Memory Puzzle"]
-modulate = Color(1, 1, 1, 0.611765)
-position = Vector2(1205, 202)
-sprite_frames = SubResource("SpriteFrames_ljwx7")
-animation = &"new_animation"
-autoplay = "new_animation"
-frame_progress = 0.345996
-speed_scale = 1.85
-offset = Vector2(0, -15)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Memory Puzzle/AnimatedSprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Memory Puzzle/AnimatedSprite2D/StaticBody2D"]
-rotation = 1.57079
-shape = SubResource("CapsuleShape2D_irywt")
-
-[node name="fireanimation" type="AnimationPlayer" parent="Memory Puzzle"]
-libraries = {
-"": SubResource("AnimationLibrary_vmq1m")
-}
 
 [connection signal="_highlight" from="WarpPoint" to="WarpPoint/Polygon2D2" method="onoff"]
 [connection signal="interacted" from="Memory Puzzle" to="Memory Puzzle" method="startdemo"]

@@ -1,3 +1,4 @@
+@tool
 extends AnimatedSprite2D
 
 var timer = Timer.new()
@@ -7,7 +8,7 @@ func _ready():
 	animation = "1"
 	add_child(timer)
 	timer.connect("timeout", timerstuff)
-	timerstuff()
+	timer.start(randf_range(1, 3))
 	for m in range(PI):
 		print(m)
 	pass # Replace with function body.

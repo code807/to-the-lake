@@ -1,4 +1,7 @@
+
 class_name Interactable extends Area2D
+
+
 
 var highlight := false : set = set_highlight
 signal _highlight(bool)
