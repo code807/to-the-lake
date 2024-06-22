@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ky2nvt060e2n"]
+[gd_scene load_steps=23 format=3 uid="uid://ky2nvt060e2n"]
 
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_47o3l"]
 [ext_resource type="TileSet" uid="uid://bu1pmm8hkbq5q" path="res://Resources/Grass Tileset.tres" id="2_y50jl"]
@@ -16,8 +16,8 @@
 script = ExtResource("7_3dual")
 story_teller = 3
 dialogue = "He was some trapper or hunter, and he lived in a dump"
-speech_time = 4.0
-wait_time = 5.0
+speech_time = 5.3
+wait_time = 6.3
 pause_time = 1.0
 
 [sub_resource type="Resource" id="Resource_l3hy8"]
@@ -32,41 +32,89 @@ pause_time = 0.5
 script = ExtResource("7_3dual")
 story_teller = 1
 dialogue = "It was actually really advanced!"
-speech_time = 2.0
+speech_time = 3.0
 wait_time = 4.0
-pause_time = 2.0
+pause_time = 1.0
 
 [sub_resource type="Resource" id="Resource_tvn6j"]
 script = ExtResource("7_3dual")
 story_teller = 1
 dialogue = " For the time anyway..."
-speech_time = 2.0
-wait_time = 3.0
+speech_time = 2.5
+wait_time = 3.5
 pause_time = 1.0
 
 [sub_resource type="Resource" id="Resource_jhkrd"]
 script = ExtResource("7_3dual")
 story_teller = 1
 dialogue = "She left because she had to"
-speech_time = 3.0
-wait_time = 5.0
+speech_time = 2.7
+wait_time = 4.7
 pause_time = 2.0
 
 [sub_resource type="Resource" id="Resource_nv34g"]
 script = ExtResource("7_3dual")
 story_teller = 0
 dialogue = "Well the village was sick"
-speech_time = 3.0
-wait_time = 4.0
+speech_time = 2.5
+wait_time = 3.5
 pause_time = 1.0
 
 [sub_resource type="Resource" id="Resource_0o1t5"]
 script = ExtResource("7_3dual")
 story_teller = 0
 dialogue = "and they left towards the lake to seek help"
-speech_time = 4.0
+speech_time = 4.3
+wait_time = 5.3
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_nldei"]
+script = ExtResource("7_3dual")
+story_teller = 2
+dialogue = "Why the lake?"
+speech_time = 1.3
+wait_time = 2.3
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_mypku"]
+script = ExtResource("7_3dual")
+story_teller = 0
+dialogue = "Well, before the people lived in the forest,"
+speech_time = 4.5
+wait_time = 5.5
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_xqr8l"]
+script = ExtResource("7_3dual")
+story_teller = 0
+dialogue = "they lived right up against the lake"
+speech_time = 3.5
+wait_time = 4.5
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_yicua"]
+script = ExtResource("7_3dual")
+story_teller = 3
+dialogue = "Plus, they thought the lake was magic or whatever"
+speech_time = 5.0
 wait_time = 6.0
-pause_time = 2.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_gcly4"]
+script = ExtResource("7_3dual")
+story_teller = 1
+dialogue = "Not magic, they thought it was guarded by a spirit!"
+speech_time = 5.0
+wait_time = 6.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_oi48i"]
+script = ExtResource("7_3dual")
+story_teller = 3
+dialogue = "Same deal"
+speech_time = 1.0
+wait_time = 2.0
+pause_time = 1.0
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("spawn_points")]
 y_sort_enabled = true
@@ -74,7 +122,7 @@ script = ExtResource("1_47o3l")
 spawn_points = [NodePath("Spawn"), NodePath("Spawn Point")]
 
 [node name="Spawn" type="Node2D" parent="."]
-position = Vector2(808, 2046)
+position = Vector2(808, 2065)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_y50jl")
@@ -148,24 +196,36 @@ layer_5/name = "Twigs"
 layer_5/tile_data = PackedInt32Array(8519728, 65546, 1, 8060980, 65546, 65537, 8126516, 65546, 1, 8192054, 65546, 0, 7798835, 65546, 65537, 7667761, 10, 327680, 7602224, 65546, 65536, 7536686, 65546, 131073, 7471150, 65546, 65536, 7471148, 65546, 65536, 7405611, 131082, 65537, 7405609, 65546, 65536, 7340072, 10, 655360, 7340067, 10, 65537, 7274530, 65546, 65537, 7274526, 65546, 65537, 7274529, 131082, 1, 7143453, 10, 327680, 8060974, 10, 327680, 7602218, 65546, 1, 6946841, 10, 1, 6946842, 65546, 196609, 6815773, 10, 131073, 6881308, 131082, 1, 6946844, 131082, 1, 6815775, 10, 655360, 6815776, 10, 0, 6750242, 131082, 131073, 6684707, 131082, 1, 6684709, 131082, 196609, 6750247, 10, 655360, 6750248, 10, 1, 6684713, 131082, 196609, 6619179, 131082, 1, 6684718, 10, 65537, 6619183, 65546, 131073, 6750257, 10, 720896, 6619186, 65546, 0, 6684723, 131082, 65537, 6619189, 65546, 131073, 6488120, 10, 327680, 6488123, 65546, 65537, 6619193, 65546, 131073, 6553662, 10, 327680, 6619197, 65546, 0, 6488128, 10, 655360, 6553665, 65546, 1, 6488130, 65546, 65536, 7209014, 65546, 131073, 7012397, 10, 720896, 6881321, 65546, 131072, 6815782, 65546, 196609, 6881344, 10, 655360, 6422600, 10, 720896, 6029382, 10, 131073, 6029380, 10, 327680, 6094907, 10, 0, 6422593, 10, 327680, 6094904, 10, 196609, 6029363, 10, 1, 5963820, 10, 65537, 6029351, 10, 720896, 5701650, 65546, 131072, 5898304, 131082, 196609, 6029377, 65546, 65536, 5767228, 65546, 131073, 5636153, 10, 0, 5701690, 65546, 0, 5636149, 65546, 196609, 5570611, 65546, 65536, 5505066, 10, 65537, 5505061, 65546, 65536, 5505056, 10, 720896, 5373978, 65546, 1, 5439516, 65546, 131073, 5242903, 65546, 0, 5373966, 10, 327680, 5046287, 131082, 1, 4849681, 10, 131073, 4915216, 10, 131073, 4784147, 65546, 0, 4718614, 131082, 131073, 4587545, 10, 1, 4587542, 65546, 196609, 4390945, 131082, 1, 4456476, 131082, 65537, 4522015, 10, 65537, 4259878, 65546, 196609, 4325413, 131082, 196609, 4325417, 65546, 131073, 4259880, 65546, 196608, 4194349, 10, 327680, 4259886, 65546, 131072, 4325420, 131082, 65537, 4259889, 10, 0, 4390959, 65546, 196608, 4718633, 10, 655360, 4194367, 10, 196609, 4128833, 131082, 131073, 4194361, 131082, 1, 4128821, 65546, 65537, 4259891, 10, 65537, 4456484, 10, 0, 4587570, 65546, 196609, 4522043, 65546, 196608, 4522053, 65546, 131073, 4194364, 10, 720896, 4063291, 10, 327680, 4128830, 65546, 196609, 4325432, 65546, 65536, 4063298, 131082, 1, 4128837, 131082, 65537, 4128836, 65546, 131072, 4194374, 65546, 65537, 4128839, 131082, 196609, 3932234, 131082, 65537, 4063304, 10, 65537, 4128841, 65546, 65536, 4063308, 65546, 65536, 4063310, 65546, 196609, 3997775, 131082, 1, 3932242, 65546, 196609, 3801170, 65546, 131072, 4063313, 10, 131073, 3997780, 10, 196609, 3932245, 65546, 196608, 3997783, 10, 655360, 4063322, 10, 327680, 4325466, 131082, 1, 7208984, 65546, 65536)
 
 [node name="Spawn Point" type="Node2D" parent="."]
-position = Vector2(1207, 264)
+position = Vector2(471, 1379)
 
 [node name="DialogueTrigger" parent="." instance=ExtResource("6_cgbl6")]
-position = Vector2(797, 1991)
+position = Vector2(799, 2005)
 scale = Vector2(10.8, 1)
-dialogue = Array[ExtResource("7_3dual")]([SubResource("Resource_0yiad"), SubResource("Resource_l3hy8")])
+dialogue = Array[ExtResource("7_3dual")]([SubResource("Resource_0yiad"), SubResource("Resource_l3hy8"), SubResource("Resource_2xlwn")])
 
 [node name="DialogueTrigger2" parent="." instance=ExtResource("6_cgbl6")]
-position = Vector2(505, 1689)
-rotation = 1.05981
+position = Vector2(589, 1695)
+rotation = -1.68669
 scale = Vector2(5.72, 1)
-dialogue = Array[ExtResource("7_3dual")]([SubResource("Resource_2xlwn"), SubResource("Resource_tvn6j"), SubResource("Resource_jhkrd")])
+dialogue = Array[ExtResource("7_3dual")]([SubResource("Resource_tvn6j"), SubResource("Resource_jhkrd")])
 
 [node name="DialogueTrigger3" parent="." instance=ExtResource("6_cgbl6")]
-position = Vector2(999, 1642)
-rotation = 1.53776
+position = Vector2(1031, 1640)
+rotation = 4.25055
 scale = Vector2(5.47485, 1)
 dialogue = Array[ExtResource("7_3dual")]([SubResource("Resource_nv34g"), SubResource("Resource_0o1t5")])
+
+[node name="DialogueTrigger4" parent="." instance=ExtResource("6_cgbl6")]
+position = Vector2(535, 1409)
+rotation = -1.42306
+scale = Vector2(6.75094, 1)
+dialogue = Array[ExtResource("7_3dual")]([SubResource("Resource_nldei"), SubResource("Resource_mypku"), SubResource("Resource_xqr8l")])
+
+[node name="DialogueTrigger5" parent="." instance=ExtResource("6_cgbl6")]
+position = Vector2(638, 1102)
+rotation = 1.36267
+scale = Vector2(6.75094, 1)
+dialogue = Array[ExtResource("7_3dual")]([SubResource("Resource_yicua"), SubResource("Resource_gcly4"), SubResource("Resource_oi48i")])
 
 [connection signal="_highlight" from="WarpPoint" to="WarpPoint/Polygon2D2" method="onoff"]
 [connection signal="_highlight" from="WarpPoint3" to="WarpPoint3/Polygon2D2" method="onoff"]
