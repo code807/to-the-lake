@@ -4,7 +4,8 @@ signal dialogue_trigger(Array)
 signal warp_trigger(String, int)
 signal one_off(int)
 
-const SPEED = 75.0
+#const SPEED = 75.0
+const SPEED = 55.0
 const MOVEMENT_SMOOTHING = 10
 const STOP_SMOOTHING = 50
 @onready var sprite = $AnimatedSprite2D
