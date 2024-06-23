@@ -348,6 +348,7 @@ process_mode = 3
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("4_b8ofl")
 volume_db = -7.429
 autoplay = true

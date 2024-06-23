@@ -1,11 +1,29 @@
-[gd_scene load_steps=14 format=3 uid="uid://blw6p4x6q18mu"]
+[gd_scene load_steps=18 format=3 uid="uid://blw6p4x6q18mu"]
 
 [ext_resource type="Script" path="res://Scenes/Pushable.gd" id="1_6lgmc"]
 [ext_resource type="Texture2D" uid="uid://bvnqebvg6am54" path="res://Assets/runestone tiles.png" id="2_3gphs"]
+[ext_resource type="PackedScene" uid="uid://uv3xjcj7iouv" path="res://Scenes/dialogue_trigger.tscn" id="2_qfjof"]
 [ext_resource type="Texture2D" uid="uid://bpu5kk765x6ag" path="res://Assets/runestone tiles glowing.png" id="3_1lsv1"]
+[ext_resource type="Script" path="res://Classes/dialogue_resource.gd" id="3_n4mnu"]
 [ext_resource type="Script" path="res://Classes/interactable.gd" id="4_ohhat"]
 [ext_resource type="Script" path="res://Scenes/AnimationPlayer.gd" id="5_5pmrr"]
 [ext_resource type="AudioStream" uid="uid://boqt0rvyxupf" path="res://Assets/SNAKE MOVE ROCK 2.wav" id="6_oy3rp"]
+
+[sub_resource type="Resource" id="Resource_xc56u"]
+script = ExtResource("3_n4mnu")
+story_teller = 3
+dialogue = "Luckily, he was strong"
+speech_time = 2.0
+wait_time = 3.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_e3hq8"]
+script = ExtResource("3_n4mnu")
+story_teller = 3
+dialogue = "He found he could push the heavy stone nearby"
+speech_time = 4.5
+wait_time = 5.5
+pause_time = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j5w1o"]
 atlas = ExtResource("2_3gphs")
@@ -63,6 +81,12 @@ gravity_scale = 0.0
 lock_rotation = true
 linear_damp = 5.0
 script = ExtResource("1_6lgmc")
+
+[node name="DialogueTrigger" parent="." instance=ExtResource("2_qfjof")]
+process_mode = 4
+position = Vector2(0, -6)
+scale = Vector2(3.39055, 3.39055)
+dialogue = Array[ExtResource("3_n4mnu")]([SubResource("Resource_xc56u"), SubResource("Resource_e3hq8")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_j5w1o")

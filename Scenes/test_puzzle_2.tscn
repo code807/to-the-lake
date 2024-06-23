@@ -1,15 +1,41 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfjogou7hxrma"]
+[gd_scene load_steps=15 format=3 uid="uid://dfjogou7hxrma"]
 
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_ttwbp"]
 [ext_resource type="TileSet" uid="uid://bu1pmm8hkbq5q" path="res://Resources/Grass Tileset.tres" id="2_jiweg"]
 [ext_resource type="Script" path="res://Classes/warp_point.gd" id="3_uwkjm"]
 [ext_resource type="Script" path="res://Scenes/TriangleLightup.gd" id="4_ywnnf"]
 [ext_resource type="PackedScene" uid="uid://d3m5f6vbl0jsk" path="res://Scenes/beast_trap.tscn" id="8_0wm2u"]
-[ext_resource type="PackedScene" uid="uid://lyy8afkogvig" path="res://Scenes/particle_emitter.tscn" id="9_2abri"]
+[ext_resource type="PackedScene" path="res://Scenes/particle_emitter.tscn" id="9_2abri"]
+[ext_resource type="PackedScene" uid="uid://uv3xjcj7iouv" path="res://Scenes/dialogue_trigger.tscn" id="9_33c70"]
 [ext_resource type="PackedScene" uid="uid://blw6p4x6q18mu" path="res://Scenes/rune.tscn" id="9_j8djw"]
+[ext_resource type="Script" path="res://Classes/dialogue_resource.gd" id="10_wr76m"]
 [ext_resource type="TileSet" uid="uid://c4ocbxrne5nh" path="res://Resources/foliage_tileset.tres" id="13_qkruj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_78pgg"]
+
+[sub_resource type="Resource" id="Resource_ssufq"]
+script = ExtResource("10_wr76m")
+story_teller = 3
+dialogue = "No no no, there was a challenge, but was a test of strength!"
+speech_time = 6.0
+wait_time = 6.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_smxg3"]
+script = ExtResource("10_wr76m")
+story_teller = 1
+dialogue = "What, no it-"
+speech_time = 1.2
+wait_time = 1.2
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_5614e"]
+script = ExtResource("10_wr76m")
+story_teller = 3
+dialogue = "A hunter's trap blocked the path..."
+speech_time = 3.5
+wait_time = 4.5
+pause_time = 1.0
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("spawn_points")]
 y_sort_enabled = true
@@ -69,9 +95,8 @@ layer_6/tile_data = PackedInt32Array(1179728, 5, 131072, 1245265, 5, 131072, 117
 position = Vector2(1202, 652)
 
 [node name="Particle Emitter" parent="." instance=ExtResource("9_2abri")]
-animation = &"1"
-frame = 10
-frame_progress = 1.0
+animation = &"2"
+frame_progress = 0.597222
 
 [node name="Interactable4" type="Node2D" parent="."]
 position = Vector2(1202, 283)
@@ -81,3 +106,8 @@ position = Vector2(1205, 198)
 
 [node name="Rune" parent="." instance=ExtResource("9_j8djw")]
 position = Vector2(1239, 365)
+
+[node name="DialogueTrigger" parent="." instance=ExtResource("9_33c70")]
+position = Vector2(1221, 540)
+scale = Vector2(19.16, 1)
+dialogue = Array[ExtResource("10_wr76m")]([SubResource("Resource_ssufq"), SubResource("Resource_smxg3"), SubResource("Resource_5614e")])
