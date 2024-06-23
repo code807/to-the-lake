@@ -23,6 +23,7 @@ func _on_set_flag(id: int, flag_state: bool):
 func _on_body_entered(body):
 	if body is Pushable:
 		talkable.dialogue_trigger.emit(talkable.dialogue)
+		$DialogueTrigger.process_mode = Node.PROCESS_MODE_DISABLED
 		closed = true
 		body.process_mode = Node.PROCESS_MODE_DISABLED
 		$PersistentDatum.state = true

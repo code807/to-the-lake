@@ -57,6 +57,7 @@ func startdemo(Node2D):
 	else:
 		audioplayer.stream = sounds[4]
 		audioplayer.play()
+		animation.play("solved")
 		$fireanimation.play("die")
 		for child in get_children():
 			if child is MemoryStone:
