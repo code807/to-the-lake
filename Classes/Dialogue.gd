@@ -19,7 +19,7 @@ func _on_timer_timeout():
 func _on_dialogue_trigger(dialogues: Array[Dictionary]):
 	print("playing dialogues" + str(dialogues))
 	#if dialogues.size() > 0:
-	play_dialogue(dialogues[0][StoryTellers.names.CHRIS])
+	#play_dialogue(dialogues[0][StoryTellers.names.CHRIS])
 		#dialogues.erase(0)
 	#if dialogues.size() > 0:
 		#pass

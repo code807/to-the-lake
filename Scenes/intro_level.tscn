@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ky2nvt060e2n"]
+[gd_scene load_steps=29 format=3 uid="uid://ky2nvt060e2n"]
 
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_47o3l"]
 [ext_resource type="TileSet" uid="uid://bu1pmm8hkbq5q" path="res://Resources/Grass Tileset.tres" id="2_y50jl"]
@@ -133,6 +133,30 @@ speech_time = 1.0
 wait_time = 2.0
 pause_time = 1.0
 
+[sub_resource type="Resource" id="Resource_jua8m"]
+script = ExtResource("7_3dual")
+story_teller = 0
+dialogue = ""
+speech_time = 0.0
+wait_time = 2.0
+pause_time = 0.0
+
+[sub_resource type="Resource" id="Resource_jf6pc"]
+script = ExtResource("7_3dual")
+story_teller = 0
+dialogue = "The hero had to face a series of trials on the way to the lake"
+speech_time = 6.0
+wait_time = 7.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_t6v8c"]
+script = ExtResource("7_3dual")
+story_teller = 1
+dialogue = "Like the magical barrier!"
+speech_time = 2.5
+wait_time = 3.5
+pause_time = 1.0
+
 [node name="Level" type="Node2D" node_paths=PackedStringArray("spawn_points")]
 y_sort_enabled = true
 script = ExtResource("1_47o3l")
@@ -252,4 +276,7 @@ dialogue = Array[ExtResource("7_3dual")]([SubResource("Resource_yicua"), SubReso
 
 [node name="WarpPoint2" parent="." instance=ExtResource("8_dluse")]
 position = Vector2(1869, 849)
+scale = Vector2(1.81065, 1.81065)
 destination = "test_puzzle_1"
+dialogue_time = 13
+dialogue = Array[ExtResource("7_3dual")]([SubResource("Resource_jua8m"), SubResource("Resource_jf6pc"), SubResource("Resource_t6v8c")])

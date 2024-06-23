@@ -9,7 +9,6 @@ const SPEED = 55.0
 const MOVEMENT_SMOOTHING = 10
 const STOP_SMOOTHING = 50
 @onready var sprite = $AnimatedSprite2D
-@onready var steps = $AnimationPlayer
 var interactables: Array[Interactable] = []
 var closest = null
 var walktimer = Timer.new()
@@ -58,7 +57,6 @@ func _physics_process(delta):
 	if direction:
 		if not sprite.is_playing():
 			sprite.play()
-			steps.play("audioup")
 		var strongaxis = direction.max_axis_index()
 		var mindex = strongaxis+2 if sign(direction[strongaxis]) > 0 else strongaxis
 		if mindex != animindex:
@@ -74,7 +72,6 @@ func _physics_process(delta):
 func _checkanim():
 	if sprite.frame%3 == 0 and velocity.length() <= 5:
 		sprite.frame = 0
-		steps.play_backwards("audioup")
 		sprite.stop()
 
 

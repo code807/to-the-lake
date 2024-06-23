@@ -1,9 +1,8 @@
-[gd_scene load_steps=35 format=3 uid="uid://f0fvbr7oe4sb"]
+[gd_scene load_steps=31 format=3 uid="uid://f0fvbr7oe4sb"]
 
 [ext_resource type="Script" path="res://Classes/Player.gd" id="1_3h3rd"]
 [ext_resource type="Texture2D" uid="uid://8r5d2l2h7ni6" path="res://Assets/wanderer sprite.png" id="2_qj31c"]
 [ext_resource type="Script" path="res://Classes/PersistentDatum.gd" id="3_26yx4"]
-[ext_resource type="AudioStream" uid="uid://dul8wisxmb8qn" path="res://Assets/WALKING SNAKE SLOW.wav" id="4_e43ii"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6fjtv"]
 radius = 5.0
@@ -202,43 +201,6 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yb2go"]
 
-[sub_resource type="Animation" id="Animation_mliwc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-80.0]
-}
-
-[sub_resource type="Animation" id="Animation_vyfh0"]
-resource_name = "audioup"
-length = 0.1081
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-80.0, -33.584]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qjq0v"]
-_data = {
-"RESET": SubResource("Animation_mliwc"),
-"audioup": SubResource("Animation_vyfh0")
-}
-
 [node name="CharacterBody2D" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_mask = 3
@@ -270,16 +232,6 @@ shape = SubResource("CircleShape2D_yb2go")
 
 [node name="PersistentDatum" type="Node" parent="."]
 script = ExtResource("3_26yx4")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_e43ii")
-volume_db = -80.0
-autoplay = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_qjq0v")
-}
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_checkanim"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
