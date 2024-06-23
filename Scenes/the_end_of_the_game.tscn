@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq5jktm3i75um"]
+
+[ext_resource type="Script" path="res://Classes/level.gd" id="1_o0cu6"]
+[ext_resource type="Script" path="res://Scripts/EndTrigger.gd" id="2_wix51"]
+
+[node name="THE END OF THE GAME" type="Node2D" node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("1_o0cu6")
+spawn_points = [NodePath("Node2D")]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="EndTrigger" type="Area2D" parent="."]
+script = ExtResource("2_wix51")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EndTrigger"]
+polygon = PackedVector2Array(-34, 40, -47, 16, -45, -24, -4, -46, 40, -34, 54, 13, 34, 41, -2, 47)
