@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c064kg605cttw"]
+[gd_scene load_steps=12 format=3 uid="uid://c064kg605cttw"]
 
 [ext_resource type="TileSet" uid="uid://bu1pmm8hkbq5q" path="res://Resources/Grass Tileset.tres" id="1_eqg1j"]
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_wh7oy"]
@@ -15,6 +15,14 @@ dialogue = ""
 speech_time = 0.0
 wait_time = 2.0
 pause_time = 0.0
+
+[sub_resource type="Resource" id="Resource_htea0"]
+script = ExtResource("10_f0r46")
+story_teller = 3
+dialogue = "That's NOT how the story goes"
+speech_time = 3.0
+wait_time = 4.0
+pause_time = 1.0
 
 [sub_resource type="Resource" id="Resource_t1bw8"]
 script = ExtResource("10_f0r46")
@@ -51,8 +59,8 @@ layer_1/tile_data = PackedInt32Array(458752, 131072, 1, 524288, 131072, 1, 58982
 [node name="WarpPoint" parent="." instance=ExtResource("12_kg62a")]
 position = Vector2(1216, 110)
 destination = "test_puzzle_2"
-dialogue_time = 4
-dialogue = Array[ExtResource("10_f0r46")]([SubResource("Resource_ymh7h"), SubResource("Resource_t1bw8")])
+dialogue_time = 8
+dialogue = Array[ExtResource("10_f0r46")]([SubResource("Resource_ymh7h"), SubResource("Resource_htea0"), SubResource("Resource_t1bw8")])
 
 [node name="Vegetation" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -85,8 +93,3 @@ scale = Vector2(1, 13.76)
 dialogue = Array[ExtResource("10_f0r46")]([SubResource("Resource_o7k58")])
 
 [node name="Memory Puzzle" parent="." instance=ExtResource("10_wlxeg")]
-
-[node name="Interactable3" parent="Memory Puzzle" index="2"]
-position = Vector2(1115, 610)
-
-[editable path="Memory Puzzle"]
