@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bfhrr6fw86da4"
+path="res://.godot/imported/LAKELAKELAKE-SNAKE 2.wav-c5466048a40ed62c89800ac6a389a206.sample"
+
+[deps]
+
+source_file="res://Assets/LAKELAKELAKE-SNAKE 2.wav"
+dest_files=["res://.godot/imported/LAKELAKELAKE-SNAKE 2.wav-c5466048a40ed62c89800ac6a389a206.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

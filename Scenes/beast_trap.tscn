@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3m5f6vbl0jsk"]
+[gd_scene load_steps=11 format=3 uid="uid://d3m5f6vbl0jsk"]
 
 [ext_resource type="Script" path="res://Scripts/beast_trap.gd" id="1_1j35a"]
 [ext_resource type="Texture2D" uid="uid://bbamu0bmow0n6" path="res://Assets/beast trap tile.png" id="2_3oeh0"]
 [ext_resource type="Script" path="res://Classes/talkable.gd" id="2_a1vhk"]
 [ext_resource type="Script" path="res://Classes/dialogue_resource.gd" id="3_6t44o"]
 [ext_resource type="Script" path="res://Classes/PersistentDatum.gd" id="5_3qfxh"]
+[ext_resource type="AudioStream" uid="uid://2tfc1u81hdoq" path="res://Assets/trap1.wav" id="6_7p8cn"]
 
 [sub_resource type="Resource" id="Resource_gsi4c"]
 script = ExtResource("3_6t44o")
@@ -50,6 +51,9 @@ shape = SubResource("RectangleShape2D_83l38")
 
 [node name="PersistentDatum" type="Node" parent="."]
 script = ExtResource("5_3qfxh")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_7p8cn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="setflag" from="PersistentDatum" to="." method="_on_set_flag"]

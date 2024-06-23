@@ -9,6 +9,8 @@ var closed := false:
 
 
 func _set_closed(is_closed: bool):
+	if is_closed:
+		$AudioStreamPlayer.play()
 	sprite.texture.region.position.x = 16 if is_closed else 0
 	static_body.process_mode = Node.PROCESS_MODE_DISABLED if is_closed \
 			else Node.PROCESS_MODE_INHERIT
@@ -22,4 +24,5 @@ func _on_body_entered(body):
 	if body is Pushable:
 		talkable.dialogue_trigger.emit(talkable.dialogue)
 		closed = true
+		body.process_mode = Node.PROCESS_MODE_DISABLED
 		$PersistentDatum.state = true

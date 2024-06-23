@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/TriangleLightup.gd" id="4_ywnnf"]
 [ext_resource type="Texture2D" uid="uid://bmqdulhbd72kg" path="res://Assets/fire-sheet.png" id="6_es5py"]
 [ext_resource type="PackedScene" uid="uid://k4f3aijx4msb" path="res://Scenes/PuzzleTwoInteractable.tscn" id="7_2k3kx"]
-[ext_resource type="PackedScene" path="res://Scenes/particle_emitter.tscn" id="9_2abri"]
+[ext_resource type="PackedScene" uid="uid://lyy8afkogvig" path="res://Scenes/particle_emitter.tscn" id="9_2abri"]
 [ext_resource type="Script" path="res://Scenes/Memory Puzzle.gd" id="10_8a3h0"]
 [ext_resource type="Texture2D" uid="uid://beb0l0rcpbx6a" path="res://Assets/bowl.png" id="10_yxkop"]
 [ext_resource type="TileSet" uid="uid://c4ocbxrne5nh" path="res://Resources/foliage_tileset.tres" id="13_qkruj"]
@@ -521,8 +521,8 @@ layer_6/tile_data = PackedInt32Array(1900609, 5, 131072, 1507394, 5, 131072, 144
 position = Vector2(1202, 652)
 
 [node name="Particle Emitter" parent="." instance=ExtResource("9_2abri")]
-animation = &"2"
-frame = 19
+animation = &"1"
+frame = 10
 frame_progress = 1.0
 
 [node name="Interactable4" type="Node2D" parent="."]
@@ -584,6 +584,8 @@ shape = SubResource("CapsuleShape2D_irywt")
 libraries = {
 "": SubResource("AnimationLibrary_vmq1m")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Memory Puzzle"]
 
 [connection signal="interacted" from="Memory Puzzle" to="Memory Puzzle" method="startdemo"]
 [connection signal="animation_finished" from="Memory Puzzle/AnimationPlayer" to="Memory Puzzle" method="_nextinsequence"]
