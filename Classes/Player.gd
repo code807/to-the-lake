@@ -4,6 +4,8 @@ signal dialogue_trigger(Array)
 signal warp_trigger(String, int)
 signal one_off(int)
 
+signal gameover
+
 #const SPEED = 75.0
 const SPEED = 55.0
 const MOVEMENT_SMOOTHING = 10
@@ -76,6 +78,8 @@ func _checkanim():
 
 
 func _on_area_2d_area_entered(area):
+	if area is EndTrigger:
+		gameover.emit()
 	if area is KeepWalking:
 		controlenabled = false
 		direction = area.direction.normalized()*SPEED

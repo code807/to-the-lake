@@ -10,6 +10,7 @@ var spawn: Vector2
 var next_level: String
 var next_level_spawn_index: int
 
+@export var introdialog: Array[DialogResource]
 
 const levels := {
 	"test_level": preload("res://Scenes/test_level.tscn"),
@@ -18,6 +19,7 @@ const levels := {
 	"test_puzzle_2": preload("res://Scenes/test_puzzle_2.tscn"),
 	"final_level": preload("res://Scenes/final_level.tscn"),
 	"intro_level": preload("res://Scenes/intro_level.tscn"),
+	"end": preload("res://Scenes/the_end_of_the_game.tscn"),
 	"hub": preload("res://Scenes/hub_level.tscn")
 }
 var level:Level
@@ -28,14 +30,20 @@ func _start_game():
 	next_level = "intro_level"
 	next_level_spawn_index = 0
 	color_rect.fade_to_black()
-	fade_to_black_timer.start(2)
+	fade_to_black_timer.start(40)
+	dialogue_manager._on_dialogue_trigger(introdialog)
 	get_tree().paused = true
 	
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	load_level("hub")
+# func _ready():
+# 	load_level("hub")
 
+func _gameover():
+	$"HUD/Main Menu".visible = true
+	$"HUD/Main Menu".process_mode = Node.PROCESS_MODE_ALWAYS
+	flags = {}
+	pass
 
 func fade_to_black(time: float, level_name: String, spawn_index: int = 0):
 	if time != 0:
@@ -106,3 +114,4 @@ func _spawn_player():
 	#player.set_deferred("global_position", spawn)
 	player.dialogue_trigger.connect(dialogue_manager._on_dialogue_trigger)
 	player.warp_trigger.connect(fade_to_black)
+	player.gameover.connect(_gameover)

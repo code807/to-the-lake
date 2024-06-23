@@ -1,9 +1,140 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgsflnfu0sjd0"]
+[gd_scene load_steps=24 format=3 uid="uid://bgsflnfu0sjd0"]
 
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_ewhe7"]
 [ext_resource type="TileSet" uid="uid://bu1pmm8hkbq5q" path="res://Resources/Grass Tileset.tres" id="2_4c4j4"]
 [ext_resource type="TileSet" uid="uid://c4ocbxrne5nh" path="res://Resources/foliage_tileset.tres" id="3_up0y5"]
 [ext_resource type="Script" path="res://Classes/KeepWalking.gd" id="4_2dqx1"]
+[ext_resource type="Script" path="res://Classes/dialogue_trigger.gd" id="5_07vc3"]
+[ext_resource type="Script" path="res://Classes/dialogue_resource.gd" id="6_wbt8t"]
+[ext_resource type="Script" path="res://Classes/warp_point.gd" id="7_g201a"]
+
+[sub_resource type="Resource" id="Resource_ybcjg"]
+script = ExtResource("6_wbt8t")
+story_teller = 1
+dialogue = "Eventually, they made it to the lake where Layru Resided."
+speech_time = 4.0
+wait_time = 5.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_gulhf"]
+script = ExtResource("6_wbt8t")
+story_teller = 3
+dialogue = "AKA the lake where there was actually clean water."
+speech_time = 3.0
+wait_time = 4.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_i42ld"]
+script = ExtResource("6_wbt8t")
+story_teller = 0
+dialogue = "Impressed by their tenacity, Layru appeared before them-"
+speech_time = 4.0
+wait_time = 3.9
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_p47ec"]
+script = ExtResource("6_wbt8t")
+story_teller = 3
+dialogue = "In the form of water that wasn't full of river germs."
+speech_time = 3.0
+wait_time = 3.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_71m83"]
+script = ExtResource("6_wbt8t")
+story_teller = 0
+dialogue = "-and presented them with a waterskin..."
+speech_time = 3.0
+wait_time = 3.0
+pause_time = 2.0
+
+[sub_resource type="Resource" id="Resource_nlx6s"]
+script = ExtResource("6_wbt8t")
+story_teller = 0
+dialogue = ""
+speech_time = 0.0
+wait_time = 3.0
+pause_time = 0.0
+
+[sub_resource type="Resource" id="Resource_6sc3y"]
+script = ExtResource("6_wbt8t")
+story_teller = 1
+dialogue = "The water inside was blessed, and ever-flowing"
+speech_time = 3.0
+wait_time = 4.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_gu7f3"]
+script = ExtResource("6_wbt8t")
+story_teller = 3
+dialogue = "They brought the waterskin with them. The lake water they filled it with just wasn't full of bugs."
+speech_time = 6.0
+wait_time = 7.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_6a3dq"]
+script = ExtResource("6_wbt8t")
+story_teller = 1
+dialogue = "No, the waterskin was magic! It cured the whole village!"
+speech_time = 5.0
+wait_time = 2.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_wxdxj"]
+script = ExtResource("6_wbt8t")
+story_teller = 2
+dialogue = "So it was named after the spirit that saved the village?"
+speech_time = 4.0
+wait_time = 4.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_ehuox"]
+script = ExtResource("6_wbt8t")
+story_teller = 3
+dialogue = "One waterskin can't feed a whole village, dummy"
+speech_time = 3.0
+wait_time = 1.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_hivg6"]
+script = ExtResource("6_wbt8t")
+story_teller = 0
+dialogue = "Yeah, that's how it goes."
+speech_time = 2.0
+wait_time = 3.0
+pause_time = 2.0
+
+[sub_resource type="Resource" id="Resource_ryxnx"]
+script = ExtResource("6_wbt8t")
+story_teller = 1
+dialogue = "What part of \"blessed by a lake spirit\" don't you understand??"
+speech_time = 4.0
+wait_time = 1.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_foak7"]
+script = ExtResource("6_wbt8t")
+story_teller = 2
+dialogue = "I like it."
+speech_time = 1.5
+wait_time = 3.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_xpp2n"]
+script = ExtResource("6_wbt8t")
+story_teller = 2
+dialogue = "Could you pass me another marshmallow?"
+speech_time = 3.0
+wait_time = 4.0
+pause_time = 6.0
+
+[sub_resource type="Resource" id="Resource_ffpbx"]
+script = ExtResource("6_wbt8t")
+story_teller = 0
+dialogue = "Coming right up"
+speech_time = 2.0
+wait_time = 0.0
+pause_time = 6.0
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("spawn_points")]
 y_sort_enabled = true
@@ -49,6 +180,7 @@ script = ExtResource("1_ewhe7")
 position = Vector2(1513, 1379)
 script = ExtResource("4_2dqx1")
 direction = Vector2(1, 0)
+time = 15.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KeepWalking"]
 polygon = PackedVector2Array(1, -42, -16, -43, -17, 51, 0, 51, 15, 51, 16, -44)
@@ -58,3 +190,28 @@ polygon = PackedVector2Array(1, -42, -16, -43, -17, 51, 0, 51, 15, 51, 16, -44)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
 build_mode = 1
 polygon = PackedVector2Array(751, 1305, 787, 1342, 825, 1373, 834, 1424, 838, 1552, 909, 1587, 951, 1659, 1024, 1693, 1102, 1680, 1159, 1612, 1212, 1553, 1310, 1494, 1392, 1475, 1432, 1450, 1463, 1429, 1520, 1419, 1611, 1435, 1657, 1541, 1621, 1808, 1209, 2068, 761, 2004, 551, 1823, 451, 1600, 440, 1379, 502, 1279, 618, 1268)
+
+[node name="DialogueTrigger" type="Area2D" parent="."]
+script = ExtResource("5_07vc3")
+dialogue = Array[ExtResource("6_wbt8t")]([SubResource("Resource_ybcjg"), SubResource("Resource_gulhf")])
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DialogueTrigger"]
+polygon = PackedVector2Array(928, 1669, 955, 1624, 1001, 1582, 1045, 1563, 1105, 1592, 1207, 1659, 1308, 1608, 1154, 1463, 994, 1449, 846, 1538, 848, 1643)
+
+[node name="DialogueTrigger2" type="Area2D" parent="."]
+script = ExtResource("5_07vc3")
+dialogue = Array[ExtResource("6_wbt8t")]([SubResource("Resource_i42ld"), SubResource("Resource_p47ec"), SubResource("Resource_71m83")])
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DialogueTrigger2"]
+polygon = PackedVector2Array(1524, 1266, 1501, 1292, 1502, 1458, 1562, 1462, 1563, 1294)
+
+[node name="WarpPoint" type="Area2D" parent="."]
+position = Vector2(1969, 1355)
+script = ExtResource("7_g201a")
+destination = "end"
+dialogue_time = 45
+auto = true
+dialogue = Array[ExtResource("6_wbt8t")]([SubResource("Resource_nlx6s"), SubResource("Resource_6sc3y"), SubResource("Resource_gu7f3"), SubResource("Resource_6a3dq"), SubResource("Resource_wxdxj"), SubResource("Resource_ehuox"), SubResource("Resource_hivg6"), SubResource("Resource_ryxnx"), SubResource("Resource_foak7"), SubResource("Resource_xpp2n"), SubResource("Resource_ffpbx")])
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WarpPoint"]
+polygon = PackedVector2Array(-35, -45, -33, 79, 56, 80, 54, -47)

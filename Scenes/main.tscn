@@ -1,13 +1,94 @@
-[gd_scene load_steps=18 format=3 uid="uid://lhwyyu0l2rc7"]
+[gd_scene load_steps=29 format=3 uid="uid://lhwyyu0l2rc7"]
 
 [ext_resource type="Script" path="res://Classes/main.gd" id="1_qb3tf"]
 [ext_resource type="PackedScene" uid="uid://7h3uqye2i4l7" path="res://Scenes/DialogueManager.tscn" id="2_nxtho"]
+[ext_resource type="Script" path="res://Classes/dialogue_resource.gd" id="2_ynmyi"]
 [ext_resource type="Script" path="res://Scenes/fade_to_black.gd" id="3_b03h6"]
 [ext_resource type="FontFile" uid="uid://bcvhppua78c7p" path="res://Assets/THEBOLDFONT 2022.otf" id="4_1h4i6"]
 [ext_resource type="AudioStream" uid="uid://bpv18ee2up83r" path="res://Assets/The Mossy Cave.wav" id="4_b8ofl"]
 [ext_resource type="Script" path="res://Scenes/Main Menu.gd" id="4_kht0p"]
 [ext_resource type="Texture2D" uid="uid://bdrnhul5jijjp" path="res://Assets/slider icon.png" id="5_vslvl"]
 [ext_resource type="Texture2D" uid="uid://b3ln35nfjqw6j" path="res://Assets/godot wj.png" id="7_g83wh"]
+
+[sub_resource type="Resource" id="Resource_vxch1"]
+script = ExtResource("2_ynmyi")
+story_teller = 0
+dialogue = "Lake Layru is so nice this time of year..."
+speech_time = 3.5
+wait_time = 4.5
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_dj0gv"]
+script = ExtResource("2_ynmyi")
+story_teller = 1
+dialogue = "Do you know the story of how it got that name?"
+speech_time = 4.0
+wait_time = 5.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_dwu3v"]
+script = ExtResource("2_ynmyi")
+story_teller = 3
+dialogue = "Well yeah, everyone knows that story, Dove"
+speech_time = 3.0
+wait_time = 4.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_cuau5"]
+script = ExtResource("2_ynmyi")
+story_teller = 2
+dialogue = "I don't. How does it go?"
+speech_time = 2.0
+wait_time = 6.0
+pause_time = 2.0
+
+[sub_resource type="Resource" id="Resource_shq22"]
+script = ExtResource("2_ynmyi")
+story_teller = 0
+dialogue = "Well ther-"
+speech_time = 1.0
+wait_time = 0.9
+pause_time = 0.0
+
+[sub_resource type="Resource" id="Resource_vr0mt"]
+script = ExtResource("2_ynmyi")
+story_teller = 3
+dialogue = "There was this guy, Layru"
+speech_time = 2.0
+wait_time = 3.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_3tmn2"]
+script = ExtResource("2_ynmyi")
+story_teller = 1
+dialogue = "No, Layru was the name of the lake spirit!"
+speech_time = 3.0
+wait_time = 4.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_u4rtf"]
+script = ExtResource("2_ynmyi")
+story_teller = 3
+dialogue = "..."
+speech_time = 2.0
+wait_time = 3.0
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_q207k"]
+script = ExtResource("2_ynmyi")
+story_teller = 0
+dialogue = "... Layru is the lake spirit"
+speech_time = 2.5
+wait_time = 3.5
+pause_time = 1.0
+
+[sub_resource type="Resource" id="Resource_ng5oe"]
+script = ExtResource("2_ynmyi")
+story_teller = 3
+dialogue = "Ok fine. There was this guy who I guess just has no name..."
+speech_time = 4.0
+wait_time = 5.0
+pause_time = 1.0
 
 [sub_resource type="Animation" id="Animation_dl4al"]
 length = 0.001
@@ -133,6 +214,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qb3tf")
+introdialog = Array[ExtResource("2_ynmyi")]([SubResource("Resource_vxch1"), SubResource("Resource_dj0gv"), SubResource("Resource_dwu3v"), SubResource("Resource_cuau5"), SubResource("Resource_shq22"), SubResource("Resource_vr0mt"), SubResource("Resource_3tmn2"), SubResource("Resource_u4rtf"), SubResource("Resource_q207k"), SubResource("Resource_ng5oe")])
 
 [node name="HUD" type="CanvasLayer" parent="."]
 process_mode = 3
