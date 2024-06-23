@@ -98,6 +98,17 @@ destination = "intro_level"
 dialogue_time = 7
 dialogue = Array[ExtResource("5_xbfgs")]([SubResource("Resource_mlqgk"), SubResource("Resource_e0uf6"), SubResource("Resource_pli83")])
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WarpPoint7"]
+shape = SubResource("CircleShape2D_ujsl1")
+
+[node name="Polygon2D3" type="Polygon2D" parent="WarpPoint7"]
+position = Vector2(-1, -1)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-13, 11, 0, -16, 15, 11)
+script = ExtResource("3_4t6gs")
+
+[node name="Spawn 2" type="Node2D" parent="WarpPoint7"]
+
 [node name="WarpPoint6" type="Area2D" parent="."]
 position = Vector2(-71, -34)
 script = ExtResource("2_o1uxk")
@@ -176,31 +187,10 @@ vertical_alignment = 1
 
 [node name="Spawn 1" type="Node2D" parent="WarpPoint3"]
 
-[node name="WarpPoint7" type="Area2D" parent="."]
+[node name="WarpPoint8" type="Area2D" parent="."]
 position = Vector2(-52, -73)
 script = ExtResource("2_o1uxk")
 destination = "final_level"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WarpPoint7"]
-shape = SubResource("CircleShape2D_ujsl1")
-
-[node name="Polygon2D2" type="Polygon2D" parent="WarpPoint7"]
-position = Vector2(-1, -1)
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(-13, 11, 0, -16, 15, 11)
-script = ExtResource("3_4t6gs")
-
-[node name="Label" type="Label" parent="WarpPoint7/Polygon2D2"]
-offset_left = -33.0
-offset_top = -11.0
-offset_right = 37.0
-offset_bottom = 12.0
-theme_override_font_sizes/font_size = 13
-text = "Final"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Spawn 1" type="Node2D" parent="WarpPoint7"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("4_kqvwv")
