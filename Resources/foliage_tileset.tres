@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://b6386lvannw0d" path="res://Assets/foliage_tiles.png" id="1_u52vl"]
 [ext_resource type="Texture2D" uid="uid://dbl535fvvoxx0" path="res://Assets/bushtiles.png" id="2_b660i"]
-[ext_resource type="Texture2D" uid="uid://db8ptb8mx0j5u" path="res://Assets/twigs tiles.png" id="3_ggdgj"]
-[ext_resource type="Texture2D" uid="uid://d4kx0v3788kys" path="res://Assets/rock tiles.png" id="4_yhm84"]
-[ext_resource type="Texture2D" uid="uid://bvnqebvg6am54" path="res://Assets/runestone tiles.png" id="5_dno3w"]
+[ext_resource type="Texture2D" uid="uid://d08o1nfl7o8kv" path="res://Assets/twigs tiles.png" id="3_ggdgj"]
+[ext_resource type="Texture2D" uid="uid://godpnkske2vj" path="res://Assets/rock tiles.png" id="4_yhm84"]
+[ext_resource type="Texture2D" uid="uid://bfsr4jwpamdpj" path="res://Assets/runestone tiles.png" id="5_dno3w"]
 [ext_resource type="Texture2D" uid="uid://uo6wmrcnp4ll" path="res://Assets/leaf_tiles.png" id="6_ke7k5"]
-[ext_resource type="Texture2D" uid="uid://cquo5txkpk3j7" path="res://Assets/tree tiles.png" id="7_rhomn"]
-[ext_resource type="PackedScene" path="res://Scenes/particle_emitter.tscn" id="8_7vrxr"]
+[ext_resource type="Texture2D" uid="uid://2ivdetonc3jd" path="res://Assets/tree tiles.png" id="7_rhomn"]
+[ext_resource type="PackedScene" uid="uid://lyy8afkogvig" path="res://Scenes/particle_emitter.tscn" id="8_7vrxr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fm4uk"]
 texture = ExtResource("1_u52vl")

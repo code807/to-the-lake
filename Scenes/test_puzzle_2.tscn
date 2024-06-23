@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/TriangleLightup.gd" id="4_ywnnf"]
 [ext_resource type="Texture2D" uid="uid://bmqdulhbd72kg" path="res://Assets/fire-sheet.png" id="6_es5py"]
 [ext_resource type="PackedScene" uid="uid://k4f3aijx4msb" path="res://Scenes/PuzzleTwoInteractable.tscn" id="7_2k3kx"]
-[ext_resource type="PackedScene" path="res://Scenes/particle_emitter.tscn" id="9_2abri"]
+[ext_resource type="PackedScene" uid="uid://lyy8afkogvig" path="res://Scenes/particle_emitter.tscn" id="9_2abri"]
 [ext_resource type="Script" path="res://Scenes/Memory Puzzle.gd" id="10_8a3h0"]
 [ext_resource type="Texture2D" uid="uid://beb0l0rcpbx6a" path="res://Assets/bowl.png" id="10_yxkop"]
 [ext_resource type="TileSet" uid="uid://c4ocbxrne5nh" path="res://Resources/foliage_tileset.tres" id="13_qkruj"]
