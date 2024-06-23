@@ -61,6 +61,9 @@ one_shot = true
 
 [node name="LetterTimer" type="Timer" parent="."]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -22.286
+
 [connection signal="finished" from="RichTextLabel" to="." method="_on_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LetterTimer" to="." method="_newletter"]

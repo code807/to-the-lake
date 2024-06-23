@@ -5,11 +5,29 @@ class_name DialogueBox extends Control
 @onready var label = $RichTextLabel
 @onready var timer = $Timer
 @onready var lettertimer = $LetterTimer
+@onready var lettersound = $AudioStreamPlayer
+
+var lettersounds = [
+	preload("res://Assets/682783__meklips__hi-2.wav"),
+	preload("res://Assets/720118__baggonotes__player_shoot1.wav"),
+	preload("res://Assets/721514__baggonotes__points_tick2.wav"),
+	preload("res://Assets/727567__moodyfingers__keyboard-keystroke.wav")
+]
 
 var lettertime = 0
 var string: String = ""
 
 func _ready():
+	
+	match storyteller:
+		StoryTellers.names.JERA:
+			lettersound.stream = lettersounds[0]
+		StoryTellers.names.DOVE:
+			lettersound.stream = lettersounds[1]
+		StoryTellers.names.CHARLIE:
+			lettersound.stream = lettersounds[2]
+		StoryTellers.names.JAK:
+			lettersound.stream = lettersounds[3]
 	label.visible = false
 	_on_finished()
 
@@ -34,6 +52,7 @@ func play_dialogue(dialogue: String, speech_time: float, pause_time: float):
 func _newletter():
 	if string.length() > 0:
 		label.text = label.text+string[0]
+		lettersound.play()
 		string = string.erase(0)
 		lettertimer.start(lettertime)
 

@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Classes/color_tileset_tiles.gd" id="1_ewqut"]
 
-[sub_resource type="Gradient" id="Gradient_ex2vj"]
+[sub_resource type="Gradient" id="Gradient_f86b5"]
 interpolation_mode = 1
 offsets = PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8)
 colors = PackedColorArray(0, 0.431373, 0, 1, 0.494118, 1, 0.568627, 1, 0.176471, 0, 0, 1, 0, 0.266667, 1, 1, 0.219608, 0.247059, 0.345098, 1)
 
 [resource]
-gradient = SubResource("Gradient_ex2vj")
+gradient = SubResource("Gradient_f86b5")
 width = 80
 height = 16
 script = ExtResource("1_ewqut")
