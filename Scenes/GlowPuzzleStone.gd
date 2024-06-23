@@ -25,7 +25,7 @@ func _setGlow(value):
 				animation.play_backwards()
 	glowing = value
 
-func _firesignal(Node2D):
+func _firesignal(node: Node2D):
 	print("stone tapped")
 	emit_signal("tapped", self)
 

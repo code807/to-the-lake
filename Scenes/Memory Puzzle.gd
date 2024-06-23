@@ -48,7 +48,7 @@ func _touchstone(stone: MemoryStone):
 					currentseq.clear()
 					child.glowing = false
 
-func startdemo(Node2D):
+func startdemo(node: Node2D):
 	if currentseq.size() < sequence.size():
 		print("demo is theoretically starting")
 		animation.play("DEFAULT")
@@ -65,7 +65,7 @@ func startdemo(Node2D):
 				child.glowing = false
 	pass
 
-func _nextinsequence(name):
+func _nextinsequence(_name):
 	demoindex += 1
 	if demoindex < sequence.size():
 		match get_child(sequence[demoindex]).color:
