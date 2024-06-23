@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ky2nvt060e2n"]
+[gd_scene load_steps=28 format=3 uid="uid://ky2nvt060e2n"]
 
 [ext_resource type="Script" path="res://Classes/level.gd" id="1_47o3l"]
 [ext_resource type="TileSet" uid="uid://bu1pmm8hkbq5q" path="res://Resources/Grass Tileset.tres" id="2_y50jl"]
@@ -10,8 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cnurjyedu7p2u" path="res://Scenes/warp_point.tscn" id="8_dluse"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_78pgg"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_2w055"]
 
 [sub_resource type="Resource" id="Resource_0yiad"]
 script = ExtResource("7_3dual")
@@ -188,32 +186,6 @@ polygon = PackedVector2Array(-13, 11, 0, -16, 15, 11)
 script = ExtResource("4_k8xli")
 
 [node name="Spawn 1" type="Node2D" parent="WarpPoint"]
-
-[node name="WarpPoint3" type="Area2D" parent="."]
-position = Vector2(875, 2058)
-script = ExtResource("3_mtyuf")
-destination = "hub"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WarpPoint3"]
-shape = SubResource("CircleShape2D_2w055")
-
-[node name="Polygon2D2" type="Polygon2D" parent="WarpPoint3"]
-position = Vector2(-1, -1)
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(-13, 11, 0, -16, 15, 11)
-script = ExtResource("4_k8xli")
-
-[node name="Label" type="Label" parent="WarpPoint3/Polygon2D2"]
-offset_left = -33.0
-offset_top = -11.0
-offset_right = 37.0
-offset_bottom = 12.0
-theme_override_font_sizes/font_size = 13
-text = "Hub"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Spawn 1" type="Node2D" parent="WarpPoint3"]
 
 [node name="Vegetation" type="TileMap" parent="."]
 y_sort_enabled = true
