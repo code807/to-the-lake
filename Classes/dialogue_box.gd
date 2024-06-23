@@ -24,10 +24,12 @@ func _ready():
 			lettersound.stream = lettersounds[0]
 		StoryTellers.names.DOVE:
 			lettersound.stream = lettersounds[1]
+			lettersound.volume_db -= 5
 		StoryTellers.names.CHARLIE:
 			lettersound.stream = lettersounds[2]
 		StoryTellers.names.JAK:
 			lettersound.stream = lettersounds[3]
+			lettersound.volume_db -= 10
 	label.visible = false
 	_on_finished()
 

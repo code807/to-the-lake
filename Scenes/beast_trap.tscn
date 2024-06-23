@@ -54,6 +54,7 @@ script = ExtResource("5_3qfxh")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_7p8cn")
+volume_db = -20.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="setflag" from="PersistentDatum" to="." method="_on_set_flag"]
