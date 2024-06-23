@@ -11,12 +11,23 @@ const STOP_SMOOTHING = 50
 @onready var sprite = $AnimatedSprite2D
 var interactables: Array[Interactable] = []
 var closest = null
+var walktimer = Timer.new()
+var direction
+
+var controlenabled = true
 
 var animindex = -1
 var animlist = ["walk_up", "walk_left", "walk_right", "walk_down"]
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func restorecontrol():
+	controlenabled = true
+
+func _ready():
+	add_child(walktimer)
+	walktimer.connect("timeout", restorecontrol)
 
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):
@@ -38,9 +49,13 @@ func _process(delta):
 
 
 func _physics_process(delta):
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_vector("left", "right", "up", "down")
+	if controlenabled:
+		direction = null
+		direction = Input.get_vector("left", "right", "up", "down")
+		direction *= SPEED
 	if direction:
 		if not sprite.is_playing():
 			sprite.play()
@@ -50,7 +65,6 @@ func _physics_process(delta):
 			animindex = mindex
 			sprite.animation = animlist[animindex]
 			sprite.play()
-		direction *= SPEED
 		velocity = velocity.move_toward(direction, MOVEMENT_SMOOTHING)
 	else:
 		velocity =  velocity.move_toward(Vector2(0,0), STOP_SMOOTHING)
@@ -64,7 +78,11 @@ func _checkanim():
 
 
 func _on_area_2d_area_entered(area):
-	if area is Interactable:
+	if area is KeepWalking:
+		controlenabled = false
+		direction = area.direction.normalized()*SPEED
+		walktimer.start(area.time)
+	elif area is Interactable:
 		interactables.append(area)
 	elif area is DialogueTrigger:
 		dialogue_trigger.emit(area.dialogue)

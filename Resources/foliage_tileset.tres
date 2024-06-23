@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=16 format=3 uid="uid://c4ocbxrne5nh"]
+[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://c4ocbxrne5nh"]
 
 [ext_resource type="Texture2D" uid="uid://b6386lvannw0d" path="res://Assets/foliage_tiles.png" id="1_u52vl"]
 [ext_resource type="Texture2D" uid="uid://dbl535fvvoxx0" path="res://Assets/bushtiles.png" id="2_b660i"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bfsr4jwpamdpj" path="res://Assets/runestone tiles.png" id="5_dno3w"]
 [ext_resource type="Texture2D" uid="uid://uo6wmrcnp4ll" path="res://Assets/leaf_tiles.png" id="6_ke7k5"]
 [ext_resource type="Texture2D" uid="uid://2ivdetonc3jd" path="res://Assets/tree tiles.png" id="7_rhomn"]
+[ext_resource type="PackedScene" uid="uid://lyy8afkogvig" path="res://Scenes/particle_emitter.tscn" id="8_7vrxr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fm4uk"]
 texture = ExtResource("1_u52vl")
@@ -502,6 +503,7 @@ texture = ExtResource("7_rhomn")
 0:14/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -3.5, 14, 1.25, 8, 8, -8, 8, -14.75, 1)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_atdfx"]
+scenes/1/scene = ExtResource("8_7vrxr")
 
 [resource]
 physics_layer_0/collision_layer = 1
