@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://k4f3aijx4msb"]
 
 [ext_resource type="Script" path="res://Scenes/GlowPuzzleStone.gd" id="1_hpig4"]
-[ext_resource type="Texture2D" uid="uid://bvnqebvg6am54" path="res://Assets/runestone tiles.png" id="2_y2gv8"]
+[ext_resource type="Texture2D" uid="uid://bfsr4jwpamdpj" path="res://Assets/runestone tiles.png" id="2_y2gv8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31ioj"]
 size = Vector2(11, 9)

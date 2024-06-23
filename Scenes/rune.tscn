@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://blw6p4x6q18mu"]
 
 [ext_resource type="Script" path="res://Scenes/Pushable.gd" id="1_6lgmc"]
-[ext_resource type="Texture2D" uid="uid://bvnqebvg6am54" path="res://Assets/runestone tiles.png" id="2_3gphs"]
+[ext_resource type="Texture2D" uid="uid://bfsr4jwpamdpj" path="res://Assets/runestone tiles.png" id="2_3gphs"]
 [ext_resource type="PackedScene" uid="uid://uv3xjcj7iouv" path="res://Scenes/dialogue_trigger.tscn" id="2_qfjof"]
 [ext_resource type="Texture2D" uid="uid://bpu5kk765x6ag" path="res://Assets/runestone tiles glowing.png" id="3_1lsv1"]
 [ext_resource type="Script" path="res://Classes/dialogue_resource.gd" id="3_n4mnu"]

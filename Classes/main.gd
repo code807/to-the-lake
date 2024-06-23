@@ -31,6 +31,7 @@ func _start_game():
 	next_level = "intro_level"
 	next_level_spawn_index = 0
 	color_rect.fade_to_black()
+	#  fade_to_black_timer.start(0)
 	fade_to_black_timer.start(40)
 	dialogue_manager._on_dialogue_trigger(introdialog)
 	get_tree().paused = true

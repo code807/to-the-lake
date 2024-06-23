@@ -104,18 +104,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_qyma3"]
 resource_name = "solved"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bowl/DialogueTrigger:process_mode")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.4001, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [4, 4, 0, 0]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ucgd3"]
 _data = {
@@ -497,18 +485,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D/DialogueTrigger:process_mode")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 4, 4]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vmq1m"]

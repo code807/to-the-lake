@@ -57,11 +57,18 @@ func startdemo(node: Node2D):
 	else:
 		audioplayer.stream = sounds[4]
 		audioplayer.play()
-		animation.play("solved")
+		# animation.play("solved")
 		$fireanimation.play("die")
+		var firedialogue = get_node_or_null("AnimatedSprite2D/DialogueTrigger")
+		if is_instance_valid(firedialogue):
+			firedialogue.queue_free()
+		var bowldialogue = get_node_or_null("Bowl/DialogueTrigger")
+		if is_instance_valid(bowldialogue):
+			bowldialogue.process_mode = Node.PROCESS_MODE_INHERIT
+		# firedialogue
+		currentseq.clear()
 		for child in get_children():
 			if child is MemoryStone:
-				currentseq.clear()
 				child.glowing = false
 	pass
 
