@@ -32,8 +32,6 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):
 		if closest != null:
-			if closest is WarpPoint:
-				emit_signal("warp_trigger", closest.destination, closest.warpindex)
 			closest.interacted.emit(self)
 	if interactables.size() > 0:
 		var closest_distance: float = INF
@@ -84,6 +82,9 @@ func _on_area_2d_area_entered(area):
 		walktimer.start(area.time)
 	elif area is Interactable:
 		interactables.append(area)
+	elif area is WarpPoint:
+		emit_signal("warp_trigger", area.dialogue_time, area.destination, area.warpindex)
+		dialogue_trigger.emit(area.dialogue)
 	elif area is DialogueTrigger:
 		dialogue_trigger.emit(area.dialogue)
 		if area.oneoff == true:

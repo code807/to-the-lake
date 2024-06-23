@@ -4,7 +4,13 @@ var lname: String
 var player: Player
 var player_scene = preload("res://Scenes/Player.tscn")
 @onready var dialogue_manager: DialogueManager = $HUD/DialogueManager
+@onready var color_rect = $HUD/ColorRect
 var spawn: Vector2
+@onready var fade_to_black_timer = $FadeToBlackTimer
+var next_level: String
+var next_level_spawn_index: int
+
+
 const levels := {
 	"test_level": preload("res://Scenes/test_level.tscn"),
 	"test_level_1": preload("res://Scenes/test_level_1.tscn"),
@@ -22,6 +28,21 @@ var flags = {} # flags, format: <levelname>-<triggerid>
 func _ready():
 	load_level("hub")
 
+
+func fade_to_black(time: float, level_name: String, spawn_index: int = 0):
+	if time != 0:
+		next_level = level_name
+		next_level_spawn_index = spawn_index
+		color_rect.fade_to_black()
+		fade_to_black_timer.start(time)
+		get_tree().paused = true
+	else:
+		load_level(level_name, spawn_index)
+
+func fade_back():
+	load_level(next_level, next_level_spawn_index)
+	get_tree().paused = false
+	color_rect.fade_back()
 
 func load_level(level_name: String, spawn_index: int = 0):
 	for collectable in get_tree().get_nodes_in_group("PersistentFlag"):
@@ -71,5 +92,6 @@ func _spawn_player():
 	player = player_scene.instantiate()
 	add_child(player)
 	player.global_position = spawn
+	#player.set_deferred("global_position", spawn)
 	player.dialogue_trigger.connect(dialogue_manager._on_dialogue_trigger)
-	player.warp_trigger.connect(load_level)
+	player.warp_trigger.connect(fade_to_black)

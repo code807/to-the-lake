@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnurjyedu7p2u"]
+
+[ext_resource type="Script" path="res://Classes/warp_point.gd" id="1_p1nom"]
+[ext_resource type="Script" path="res://Scenes/TriangleLightup.gd" id="2_uq803"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2w055"]
+
+[node name="WarpPoint" type="Area2D"]
+script = ExtResource("1_p1nom")
+destination = "hub"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2w055")
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(-1, -1)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-13, 11, 0, -16, 15, 11)
+script = ExtResource("2_uq803")
+
+[node name="Label" type="Label" parent="Polygon2D2"]
+offset_left = -33.0
+offset_top = -11.0
+offset_right = 37.0
+offset_bottom = 12.0
+theme_override_font_sizes/font_size = 13
+text = "intro_level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spawn 1" type="Node2D" parent="."]

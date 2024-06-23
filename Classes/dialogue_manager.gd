@@ -22,7 +22,8 @@ func _on_dialogue_trigger(dialogues: Array[DialogResource]):
 func play_next_dialogue():
 	if(dialogue_queue.size() > 0):
 		var dialogue = dialogue_queue.pop_front()
-		play_dialogue(dialogue)
+		if dialogue.dialogue.length() > 0:
+			play_dialogue(dialogue)
 		timer.start(dialogue.wait_time)
 
 
