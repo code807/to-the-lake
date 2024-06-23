@@ -27,6 +27,7 @@ var level:Level
 var flags = {} # flags, format: <levelname>-<triggerid>
 
 func _start_game():
+	$"HUD/Main Menu".process_mode = Node.PROCESS_MODE_DISABLED
 	next_level = "intro_level"
 	next_level_spawn_index = 0
 	color_rect.fade_to_black()
@@ -58,7 +59,6 @@ func fade_to_black(time: float, level_name: String, spawn_index: int = 0):
 func fade_back():
 	if $"HUD/Main Menu".visible:
 		$"HUD/Main Menu".visible = false
-		$"HUD/Main Menu".process_mode = Node.PROCESS_MODE_DISABLED
 	load_level(next_level, next_level_spawn_index)
 	get_tree().paused = false
 	color_rect.fade_back()
